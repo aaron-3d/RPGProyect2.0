@@ -7,10 +7,10 @@ public class MovimientoJugador : MonoBehaviour
 
 	private Rigidbody rb;
 
-	[Range(1, 10)]
+	[Range(1, 1000)]
 	public float velocidad = 5;
 
-	[Range(1, 10)]
+	[Range(1, 1000)]
 	public float salto = 7;
 
 	public float rotationSpeed;
