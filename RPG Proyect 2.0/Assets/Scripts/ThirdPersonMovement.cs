@@ -13,16 +13,18 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+
     // Start is called before the first frame update
     void Start()
-    {     
-        
+    {
+        Application.targetFrameRate = 60;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Cursor.visible = false;  Oculta el cursor
+        //Cursor.visible = false;
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
