@@ -1,56 +1,56 @@
 fileFormatVersion: 2
-guid: 6cb6d32f574f5cb4caead677d60bd715
+guid: 89be74e8412742e4baa9186b37db9e78
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -4056597673519587207
-    second: Entrada.001|Cube.001Action
+      74: -1436290370878300979
+    second: Piedra 1.001|Cube.001Action
   - first:
-      74: 7514280503858036266
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.001
+      74: -4004628731114293822
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.001
   - first:
-      74: -380543039368319379
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.002
+      74: -1429692297594622780
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.002
   - first:
-      74: -4248372947942713988
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.003
+      74: 4145621347268796187
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.003
   - first:
-      74: 8096084494309696850
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.004
+      74: -7813804177542772536
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.004
   - first:
-      74: 2184426450800433218
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.005
+      74: 1371498495997750389
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.005
   - first:
-      74: 4544752187050737666
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.006
+      74: -9009038968311215552
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.006
   - first:
-      74: 6847292958228184193
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.007
+      74: -8744322649147925260
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.007
   - first:
-      74: 1725946521968451376
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.008
+      74: 2434954936846359508
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.008
   - first:
-      74: 459186524294654889
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.009
+      74: 2413517047825579551
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.009
   - first:
-      74: -4416203568107876561
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.010
+      74: -7386786952718526489
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.010
   - first:
-      74: 8073161444665300360
-    second: Entrada.001|Skeleton_lowPoly_Cube.003Action.011
+      74: 7324948121014985133
+    second: Piedra 1.001|Skeleton_lowPoly_Cube.003Action.011
   - first:
-      74: 3676645721514561576
-    second: Entrada.001|Sphere.003Action
+      74: 7036243460235357230
+    second: Piedra 1.001|Sphere.003Action
   - first:
-      74: 3070010956905042494
-    second: Entrada.001|Sphere.004Action
+      74: -318252145341130914
+    second: Piedra 1.001|Sphere.004Action
   - first:
-      74: -3592148863503199904
-    second: Entrada.001|SphereAction.001
+      74: 3085035017773164422
+    second: Piedra 1.001|SphereAction.001
   - first:
-      74: -2227117242050346017
-    second: Entrada.001|SphereAction.003
+      74: -2525551694792963524
+    second: Piedra 1.001|SphereAction.003
   externalObjects: {}
   materials:
     materialImportMode: 2
