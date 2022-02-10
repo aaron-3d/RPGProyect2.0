@@ -33,6 +33,17 @@ public class HealthDamage : MonoBehaviour
         }
     }
 
+    public void SumarVida(int cantidad)
+    {
+        if (vidaP > 0)
+        {
+            vidaP += cantidad;
+            //anim.Play("TakeDamage1");
+            //StartCoroutine(Invulnerabilidad());
+            //StartCoroutine(FrenarVelocidad());
+        }
+    }
+
     void GameOver()
     {
         Debug.Log("Has muerto.");

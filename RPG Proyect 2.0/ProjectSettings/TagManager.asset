@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Espada
   - Enemigo
+  - PowerUpVida
   layers:
   - Default
   - TransparentFX
