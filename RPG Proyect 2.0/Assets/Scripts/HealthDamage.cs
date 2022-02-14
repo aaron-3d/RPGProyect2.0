@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthDamage : MonoBehaviour
 {
@@ -12,9 +13,15 @@ public class HealthDamage : MonoBehaviour
 
     private Animator anim;
 
+    public HealthBarSlider healthBarSlider;
+
+    public GameObject deathOverlay;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
+        healthBarSlider.SetMaxHealth(vidaP);
+        deathOverlay.SetActive(false);
     }
 
     public void QuitarVida(int cantidad)
@@ -25,10 +32,13 @@ public class HealthDamage : MonoBehaviour
             anim.Play("TakeDamage1");
             StartCoroutine(Invulnerabilidad());
             StartCoroutine(FrenarVelocidad());
+            healthBarSlider.SetHealth(vidaP);
 
-            if(vidaP == 0)
+            if (vidaP <= 0)
             {
+                vidaP = 0;
                 GameOver();
+
             }
         }
     }
@@ -41,12 +51,26 @@ public class HealthDamage : MonoBehaviour
             //anim.Play("TakeDamage1");
             //StartCoroutine(Invulnerabilidad());
             //StartCoroutine(FrenarVelocidad());
+            healthBarSlider.SetHealth(vidaP);
+            if(vidaP > 100)
+            {
+                vidaP = 100;
+            }
         }
     }
 
-    void GameOver()
+    public void GameOver()
     {
         Debug.Log("Has muerto.");
+        deathOverlay.SetActive(true);
+        //Freezear el juego
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void Retry()
+    {
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        deathOverlay.SetActive(false);
     }
 
     IEnumerator Invulnerabilidad()
@@ -59,7 +83,7 @@ public class HealthDamage : MonoBehaviour
     IEnumerator FrenarVelocidad()
     {
         var velocidadActual = GetComponent<ThirdPersonMovement>().speed;
-        GetComponent<ThirdPersonMovement>().speed = 0;
+        GetComponent<ThirdPersonMovement>().speed = 4;
         yield return new WaitForSeconds(tiempoFrenado);
         GetComponent<ThirdPersonMovement>().speed = velocidadActual;
     }

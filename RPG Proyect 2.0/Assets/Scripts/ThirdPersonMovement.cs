@@ -45,4 +45,8 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
     }
+    public void SumarSpeed(int cantidadSpeed)
+    {
+            speed += cantidadSpeed;
+    }
 }

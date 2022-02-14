@@ -9,6 +9,7 @@ TagManager:
   - Espada
   - Enemigo
   - PowerUpVida
+  - PowerUpSpeed
   layers:
   - Default
   - TransparentFX
