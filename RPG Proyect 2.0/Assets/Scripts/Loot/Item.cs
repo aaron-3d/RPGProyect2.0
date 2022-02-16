@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CameraScript : MonoBehaviour
+public class Item : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int cantidad = 1;
+    public Text textoCantidad;
+    public int ID;
     void Start()
     {
         
@@ -13,6 +16,6 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        textoCantidad.text = cantidad.ToString();
     }
 }
