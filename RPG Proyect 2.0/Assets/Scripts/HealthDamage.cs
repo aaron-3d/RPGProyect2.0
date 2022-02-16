@@ -38,7 +38,6 @@ public class HealthDamage : MonoBehaviour
             {
                 vidaP = 0;
                 GameOver();
-
             }
         }
     }

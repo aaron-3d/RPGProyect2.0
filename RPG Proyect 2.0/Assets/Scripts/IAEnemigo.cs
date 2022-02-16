@@ -25,7 +25,7 @@ public class IAEnemigo : MonoBehaviour
 
         if (Vector3.Distance(Target.transform.position, transform.position) <= 10)
         {
-           Target.GetComponent<HealthDamage>().QuitarVida(canti dad);
+           Target.GetComponent<HealthDamage>().QuitarVida(cantidad);
         }
     }
 }
