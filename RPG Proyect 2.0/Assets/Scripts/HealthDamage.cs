@@ -22,6 +22,7 @@ public class HealthDamage : MonoBehaviour
         anim = GetComponent<Animator>();
         healthBarSlider.SetMaxHealth(vidaP);
         deathOverlay.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void QuitarVida(int cantidad)
@@ -65,6 +66,7 @@ public class HealthDamage : MonoBehaviour
         deathOverlay.SetActive(true);
         //Freezear el juego
         Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
     }
 
     public void Retry()

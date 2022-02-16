@@ -12,6 +12,12 @@ public class DamageDealer : MonoBehaviour
         {
             other.GetComponent<HealthDamage>().QuitarVida(cantidad);
         }
+
+        if (gameObject.tag == "Espada")
+        {
+            Debug.Log("Espada daño");
+            other.GetComponent<HealthDamage>().QuitarVida(cantidad);
+        }
     }
 
     private void OnTriggerStay(Collider other)
