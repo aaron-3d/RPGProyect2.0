@@ -9,6 +9,7 @@ public class IAEnemigo : MonoBehaviour
     public NavMeshAgent agent;
     public HealthDamage healthDamage;
     public int cantidad = 1;
+    public int distanciaAtaque;
     public float distance;
     public void Update()
     {
@@ -23,7 +24,7 @@ public class IAEnemigo : MonoBehaviour
             agent.speed = 0;
         }
 
-        if (Vector3.Distance(Target.transform.position, transform.position) <= 10)
+        if (Vector3.Distance(Target.transform.position, transform.position) <= distanciaAtaque)
         {
            Target.GetComponent<HealthDamage>().QuitarVida(cantidad);
         }
