@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public class Inventario : MonoBehaviour
+
+public class InventarioSwap : MonoBehaviour
 {
     public GraphicRaycaster graphRay;
     private PointerEventData pointerData;
@@ -28,7 +29,7 @@ public class Inventario : MonoBehaviour
         {
             pointerData.position = Input.mousePosition;
             graphRay.Raycast(pointerData, raycastResults);
-            if(raycastResults.Count > 0)
+            if (raycastResults.Count > 0)
             {
                 if (raycastResults[0].gameObject.GetComponent<Item>()) //si el objeto que pulsamos tiene el componente Item
                 {
@@ -39,7 +40,7 @@ public class Inventario : MonoBehaviour
             }
         }
 
-        if(objetoSeleccionado != null)
+        if (objetoSeleccionado != null)
         {
             objetoSeleccionado.GetComponent<RectTransform>().localPosition = CanvasScreen(Input.mousePosition); //Que se vea el item moviendose junto al raton
         }
@@ -48,22 +49,21 @@ public class Inventario : MonoBehaviour
             pointerData.position = Input.mousePosition;
             raycastResults.Clear(); //eliminar los resultados del RayCast
             graphRay.Raycast(pointerData, raycastResults); //para saber donde dejamos el item
-            if(raycastResults.Count > 0)
+            if (raycastResults.Count > 0)
             {
-                foreach(var resultado in raycastResults)
+                foreach (var resultado in raycastResults)
                 {
-
-                    if(resultado.gameObject.CompareTag("Slot")) //caso de slot libre
+                    if (resultado.gameObject == objetoSeleccionado) continue;
+                    if (resultado.gameObject.CompareTag("Slot")) //caso de slot libre
                     {
                         if (resultado.gameObject.GetComponentInChildren<Item>() == null)
                         {
                             objetoSeleccionado.transform.SetParent(resultado.gameObject.transform);
-                            objetoSeleccionado.transform.localPosition = Vector2.zero;
-                            exParent = objetoSeleccionado.transform.parent.transform;
+                            
                         }
                         else //caso de slot ocupado
                         {
-                            if(resultado.gameObject.GetComponentInChildren<Item>().ID == objetoSeleccionado.GetComponent<Item>().ID) //acceder al ID y si es igual
+                            if (resultado.gameObject.GetComponentInChildren<Item>().ID == objetoSeleccionado.GetComponent<Item>().ID) //acceder al ID y si es igual
                             {
                                 resultado.gameObject.GetComponentInChildren<Item>().cantidad += objetoSeleccionado.GetComponent<Item>().cantidad; //suma las cantidadesd e un mismo item, (2 pociones + 2 pociones)
                                 Destroy(objetoSeleccionado.gameObject);

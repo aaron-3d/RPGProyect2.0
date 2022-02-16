@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-    public int cantidad = 1;
+    public int cantidad = 1; //cantidad de cada objeto (20 pociones)
     public Text textoCantidad;
     public int ID;
     void Start()
