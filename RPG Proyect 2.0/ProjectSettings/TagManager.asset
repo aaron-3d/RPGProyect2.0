@@ -11,7 +11,11 @@ TagManager:
   - PowerUpVida
   - PowerUpSpeed
   - PowerUpDamage
+<<<<<<< Updated upstream
   - PowerUpJump
+=======
+  - Water
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

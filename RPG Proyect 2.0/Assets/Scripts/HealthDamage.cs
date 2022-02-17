@@ -68,6 +68,13 @@ public class HealthDamage : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Water")
+        {
+            GameOver();
+        }
+    }
     public void Retry()
     {
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
