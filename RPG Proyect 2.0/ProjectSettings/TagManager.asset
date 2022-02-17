@@ -11,6 +11,7 @@ TagManager:
   - PowerUpVida
   - PowerUpSpeed
   - PowerUpDamage
+  - PowerUpJump
   layers:
   - Default
   - TransparentFX

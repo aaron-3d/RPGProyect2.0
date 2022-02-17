@@ -18,13 +18,13 @@ public class PowerUps : MonoBehaviour
                 Debug.Log("Vida aumentada (+15)");
             }
         }
-        else if(gameObject.tag == "PowerUpSpeed")
+        else if (gameObject.tag == "PowerUpSpeed")
         {
             if (other.tag == "Player") ;
             {
-                other.GetComponent<ThirdPersonMovement>().SumarSpeed(cantidadSpeed);
+                other.GetComponent<CamaraTercera>().AddExtraSpeed(0.1f);
                 Destroy(gameObject);
-                Debug.Log("Velocidad aumentada(+6)");
+                Debug.Log("Velocidad aumentada");
             }
         }
         else if (gameObject.tag == "PowerUpDamage")
@@ -34,6 +34,16 @@ public class PowerUps : MonoBehaviour
                 //other.GetComponent<HealthDamage>().SumarSpeed(cantidadSpeed);
                 Destroy(gameObject);
                 Debug.Log("Daño aumentado(+x)");
+            }
+
+        }
+        else if (gameObject.tag == "PowerUpJump")
+        {
+            if (other.tag == "Player");
+            {
+                other.GetComponent<MovimientoPersonajeTercero>().AddExtraJump(1);
+                Destroy(gameObject);
+                Debug.Log("Ahora puedes dar otro salto en el aire");
             }
         }
     }
