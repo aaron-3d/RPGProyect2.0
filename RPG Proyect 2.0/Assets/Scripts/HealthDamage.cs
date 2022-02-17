@@ -11,6 +11,8 @@ public class HealthDamage : MonoBehaviour
     public float tiempoInvencible = 1;
     public float tiempoFrenado = 0.2f;
 
+    public CamaraTercera camaraTercera;
+
     private Animator anim;
 
     public HealthBarSlider healthBarSlider;
@@ -90,10 +92,9 @@ public class HealthDamage : MonoBehaviour
 
     IEnumerator FrenarVelocidad()
     {
-        var velocidadActual = GetComponent<ThirdPersonMovement>().speed;
-        GetComponent<ThirdPersonMovement>().speed = 4;
+        var velocidadActual = GetComponent<CamaraTercera>().speed;
+        GetComponent<CamaraTercera>().speed = 0.02f;
         yield return new WaitForSeconds(tiempoFrenado);
-        GetComponent<ThirdPersonMovement>().speed = velocidadActual;
+        GetComponent<CamaraTercera>().speed = velocidadActual;
     }
-
 }
