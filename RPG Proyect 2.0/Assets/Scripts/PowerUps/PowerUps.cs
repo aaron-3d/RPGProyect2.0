@@ -28,7 +28,7 @@ public class PowerUps : MonoBehaviour
         textoPowerUpVida.text = message;
         textoPowerUpVida.enabled = true;
         yield return new WaitForSeconds(delay);
-        textoPowerUpVida.enabled = false;
+        textoPowerUpVida.enabled = false;        
     }
 
     IEnumerator Destroy(float delay)

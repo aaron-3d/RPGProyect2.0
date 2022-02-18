@@ -9,7 +9,7 @@ public class IAEnemigo : MonoBehaviour
     public NavMeshAgent agent;
     public HealthDamage healthDamage;
     public int cantidad = 1;
-    public int distanciaAtaque;
+    public float distanciaAtaque;
     public float distance;
     public void Update()
     {

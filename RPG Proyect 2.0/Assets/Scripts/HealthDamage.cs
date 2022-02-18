@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HealthDamage : MonoBehaviour
 {
     public int vidaP = 100;
+    public int vidaEnemigo = 35;
     public bool invencible = false;
 
     public float tiempoInvencible = 1;
@@ -16,6 +17,8 @@ public class HealthDamage : MonoBehaviour
     private Animator anim;
 
     public HealthBarSlider healthBarSlider;
+    public ParticleSystem healthParticles;
+    public ParticleSystem healthUpParticles;
 
     public GameObject deathOverlay;
 
@@ -36,11 +39,29 @@ public class HealthDamage : MonoBehaviour
             StartCoroutine(Invulnerabilidad());
             StartCoroutine(FrenarVelocidad());
             healthBarSlider.SetHealth(vidaP);
+            healthParticles.Play();
 
             if (vidaP <= 0)
             {
                 vidaP = 0;
                 GameOver();
+            }
+        }
+    }
+
+    public void QuitarVidaEnemigo(int cantidad)
+    {
+        if (!invencible && vidaEnemigo > 0)
+        {
+            vidaEnemigo -= cantidad;
+            anim.Play("EsqueletoRecibeGolpe");
+            //StartCoroutine(Invulnerabilidad());
+            StartCoroutine(FrenarVelocidad());
+
+            if (vidaEnemigo <= 0)
+            {
+                vidaEnemigo = 0;
+                Destroy(gameObject);
             }
         }
     }
@@ -54,7 +75,8 @@ public class HealthDamage : MonoBehaviour
             //StartCoroutine(Invulnerabilidad());
             //StartCoroutine(FrenarVelocidad());
             healthBarSlider.SetHealth(vidaP);
-            if(vidaP > 100)
+            healthUpParticles.Play();
+            if (vidaP > 100)
             {
                 vidaP = 100;
             }

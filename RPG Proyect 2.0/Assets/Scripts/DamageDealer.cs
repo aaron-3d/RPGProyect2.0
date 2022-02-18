@@ -15,8 +15,8 @@ public class DamageDealer : MonoBehaviour
 
         if (gameObject.tag == "Espada")
         {
-            Debug.Log("Espada daño");
-            other.GetComponent<HealthDamage>().QuitarVida(cantidad);
+            Debug.Log("Daño de Espada");
+            other.GetComponent<HealthDamage>().QuitarVidaEnemigo(cantidad);
         }
     }
 
