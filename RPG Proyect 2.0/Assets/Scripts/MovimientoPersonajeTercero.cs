@@ -31,7 +31,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     private void OnEnable()
     {
         _movement = GetComponent<CamaraTercera>();
-        _animator = GetComponent<Animator>();
+        _animator = transform.GetChild(0).GetComponent<Animator>();
     }
 
     public void Awake()
