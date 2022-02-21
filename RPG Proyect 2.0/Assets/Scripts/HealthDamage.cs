@@ -18,6 +18,9 @@ public class HealthDamage : MonoBehaviour
     public HealthBarSlider healthBarSlider;
 
     public GameObject deathOverlay;
+    
+    [SerializeField]
+    public bool isPlayer;
 
     private void Start()
     {

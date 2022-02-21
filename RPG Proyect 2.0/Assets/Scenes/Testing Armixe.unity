@@ -1067,7 +1067,7 @@ GameObject:
   - component: {fileID: 361646222}
   - component: {fileID: 361646221}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextoVida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1328,6 +1328,7 @@ GameObject:
   - component: {fileID: 429263953}
   - component: {fileID: 429263952}
   - component: {fileID: 429263960}
+  - component: {fileID: 429263961}
   m_Layer: 0
   m_Name: Jugador rig
   m_TagString: Player
@@ -1464,6 +1465,7 @@ MonoBehaviour:
   camaraTercera: {fileID: 0}
   healthBarSlider: {fileID: 803724273}
   deathOverlay: {fileID: 1054922561}
+  isPlayer: 1
 --- !u!95 &429263958
 Animator:
   serializedVersion: 4
@@ -1516,6 +1518,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!65 &429263961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429263951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7, y: 0.83, z: 1}
+  m_Center: {x: 3.23, y: 4.83, z: 0}
 --- !u!1 &545264422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,6 +2347,7 @@ MonoBehaviour:
   camaraTercera: {fileID: 0}
   healthBarSlider: {fileID: 803724273}
   deathOverlay: {fileID: 1054922561}
+  isPlayer: 0
 --- !u!95 &671848014
 Animator:
   serializedVersion: 4
@@ -3092,7 +3108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 803724274}
   textoVida: {fileID: 361646221}
-  healthDamage: {fileID: 671848013}
+  healthDamage: {fileID: 429263957}
 --- !u!114 &803724274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3319,6 +3335,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &848259859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848259850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162381ab7b525a04e9cd3a11953ff5a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armasCollider:
+  - {fileID: 848259853}
+  "pu\xF1oCollider": {fileID: 0}
 --- !u!1 &869065636 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 04157d4be6081024a99ef629babf7760, type: 3}
@@ -5312,7 +5343,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834190601}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad865fcc51891554b98488c97b6867fa, type: 3}
   m_Name: 
@@ -5324,6 +5355,7 @@ MonoBehaviour:
   camaraTercera: {fileID: 0}
   healthBarSlider: {fileID: 0}
   deathOverlay: {fileID: 0}
+  isPlayer: 0
 --- !u!195 &1834190609
 NavMeshAgent:
   m_ObjectHideFlags: 0
