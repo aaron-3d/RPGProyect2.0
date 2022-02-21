@@ -31,7 +31,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     private void OnEnable()
     {
         _movement = GetComponent<CamaraTercera>();
-        _animator = transform.GetChild(0).GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     public void Awake()
@@ -55,15 +55,46 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         if (Time.deltaTime > 1e-5f)
         {
             velocity = smoothDeltaPosition / Time.deltaTime;
+            
         }
+        
+        //Debug.Log("Speed " + direction.magnitude);
+        _animator.SetFloat("Speed", _movement._move.magnitude);
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {                  
-            if(availableJumps > usedJumps)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //StartCoroutine(WaitForJump(1));
+            if (usedJumps == 0)
             {
                 rb.AddForce(jump * jumpForce, 0);
+                _animator.SetBool("Salta", true);
+                print("Se pone true");
                 usedJumps += 1;
             }
+
+            else if (availableJumps > usedJumps)
+            {
+                rb.AddForce(jump * jumpForce, 0);
+                //_animator.SetBool("Salta", true);
+                print("Se pone true");
+                usedJumps += 1;
+            }
+
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            _animator.SetBool("Salta", false);
+            print("Se pone false");
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            _animator.SetBool("Puñetazo", true);
+            // animator.ResetTrigger("Punch");
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            _animator.SetBool("Puñetazo", false);
+            // animator.ResetTrigger("Punch");
         }
     }
 
@@ -75,15 +106,18 @@ public class MovimientoPersonajeTercero : MonoBehaviour
 
     public void OnCollisionEnter(Collision col)
     {
-        
         {
             usedJumps = 0;
         }
-
     }
     private void OnAnimatorMove()
     {
         //Update the position based on the next position;
         transform.position = _movement.nextPosition;
+    }
+    IEnumerator WaitForJump(float delay)
+    {
+
+        yield return new WaitForSeconds(delay);
     }
 }
