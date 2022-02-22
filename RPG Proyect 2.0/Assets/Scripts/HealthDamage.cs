@@ -70,6 +70,8 @@ public class HealthDamage : MonoBehaviour
     {
         Debug.Log("Has muerto.");
         deathOverlay.SetActive(true);
+        //anim.SetBool("Estamuerto", true);
+        //anim.SetTrigger("Estamuerto");
         //Freezear el juego
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
@@ -85,6 +87,7 @@ public class HealthDamage : MonoBehaviour
     public void Retry()
     {
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        //anim.SetBool("Estamuerto", false);
         deathOverlay.SetActive(false);
     }
 

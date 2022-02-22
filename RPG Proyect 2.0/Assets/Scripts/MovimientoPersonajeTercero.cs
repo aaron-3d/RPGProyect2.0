@@ -62,6 +62,15 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         //Debug.Log("Speed " + direction.magnitude);
         _animator.SetFloat("Speed", _movement._move.magnitude);
 
+        if(_movement._move.magnitude >= 0.01f)
+        {
+            _animator.SetBool("Semueve", true);
+        }
+        else
+        {
+            _animator.SetBool("Semueve", false);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //StartCoroutine(WaitForJump(1));
@@ -89,26 +98,26 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            if(healthDamage.conArma = true)
+            if(healthDamage.conArma == true)
             {
-                _animator.SetBool("Puñetazo", true);
+                _animator.SetBool("conArma", true);
                 // animator.ResetTrigger("Punch");
             }
             else
             {
-                _animator.SetBool("conArma", true);
+                _animator.SetBool("Puñetazo", true);
             }
 
         }
         if (Input.GetMouseButtonUp(0))
-            if (healthDamage.conArma = true)
+            if (healthDamage.conArma == true)
             {
-                _animator.SetBool("Puñetazo", false);
+                _animator.SetBool("conArma", false);
                 // animator.ResetTrigger("Punch");
             }
             else
             {
-                _animator.SetBool("conArma", false);
+                _animator.SetBool("Puñetazo", false);
             }
     }
 

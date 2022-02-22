@@ -232,7 +232,7 @@ public class Inventario : MonoBehaviour
     }
     void PocionSalud()
     {
-
+        EliminarItem(0, 1);
     }
     void Espada()
     {
