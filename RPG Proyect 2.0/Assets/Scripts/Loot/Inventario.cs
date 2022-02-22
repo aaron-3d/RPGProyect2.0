@@ -17,6 +17,7 @@ public class Inventario : MonoBehaviour
             this.cantidad = cantidad;
         }
     }
+    public HealthDamage healthDamage;
 
     [SerializeField]
     DataBase data;
@@ -29,7 +30,7 @@ public class Inventario : MonoBehaviour
     public Transform exParent;
     [Header("Prefs e items")]
     public static GameObject Descripcion;
-    //public CartelEliminacion CE;
+    public CartelEliminacion CE;
     public int OSC;
     public int OSID;
 
@@ -120,8 +121,21 @@ public class Inventario : MonoBehaviour
                             objetoSeleccionado.transform.SetParent(exParent.transform);
                             objetoSeleccionado.transform.localPosition = Vector2.zero;
                         }
+                        if (resultado.gameObject.CompareTag("Eliminar"))
+                        {
+                            if(objetoSeleccionado.gameObject.GetComponent<Item>().cantidad >= 2)
+                            {
+                                CE.gameObject.SetActive(true);
+                            }
+                            else
+                            {
+                                CE.gameObject.SetActive(false);
+                                EliminarItem(objetoSeleccionado.gameObject.GetComponent<Item>().ID, objetoSeleccionado.gameObject.GetComponent<Item>().cantidad);
+                            }
+                        }
                     }
                 }
+                objetoSeleccionado.transform.localPosition = Vector3.zero;
                 objetoSeleccionado = null;
             }
         }
@@ -232,6 +246,7 @@ public class Inventario : MonoBehaviour
     }
     void PocionSalud()
     {
+        healthDamage.SumarVida(20);
         EliminarItem(0, 1);
     }
     void Espada()

@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemigo
+  - PowerUpSpeed
+  - PowerUpJump
+  - PowerUpDamage
+  - Espada
+  - PowerUpVida
+  - Water
+  - Slot
+  - Item
+  - Eliminar
   layers:
   - Default
   - TransparentFX
