@@ -22,7 +22,7 @@ public class HealthDamage : MonoBehaviour
     [SerializeField]
     public bool isPlayer;
     [SerializeField]
-    public bool conArma;
+    public bool conArma = false;
 
     private void Start()
     {

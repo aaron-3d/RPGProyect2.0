@@ -17,6 +17,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
 
     public int cantidadSaltos = 1;
 
+    public HealthDamage healthDamage;
 
 
     private Vector2 smoothDeltaPosition = Vector2.zero;
@@ -88,14 +89,27 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            _animator.SetBool("Puñetazo", true);
-            // animator.ResetTrigger("Punch");
+            if(healthDamage.conArma = true)
+            {
+                _animator.SetBool("Puñetazo", true);
+                // animator.ResetTrigger("Punch");
+            }
+            else
+            {
+                _animator.SetBool("conArma", true);
+            }
+
         }
         if (Input.GetMouseButtonUp(0))
-        {
-            _animator.SetBool("Puñetazo", false);
-            // animator.ResetTrigger("Punch");
-        }
+            if (healthDamage.conArma = true)
+            {
+                _animator.SetBool("Puñetazo", false);
+                // animator.ResetTrigger("Punch");
+            }
+            else
+            {
+                _animator.SetBool("conArma", false);
+            }
     }
 
     public void AddExtraJump(int cantidadSaltos)

@@ -1368,6 +1368,7 @@ MonoBehaviour:
   availableJumps: 1
   usedJumps: 0
   cantidadSaltos: 1
+  healthDamage: {fileID: 429263957}
   velocity: {x: 0, y: 0}
   magnitude: 4
 --- !u!114 &429263954
@@ -2484,6 +2485,7 @@ MonoBehaviour:
   availableJumps: 1
   usedJumps: 0
   cantidadSaltos: 1
+  healthDamage: {fileID: 0}
   velocity: {x: 0, y: 0}
   magnitude: 4
 --- !u!65 &671848019
@@ -5431,7 +5433,7 @@ MonoBehaviour:
   agent: {fileID: 1834190609}
   healthDamage: {fileID: 671848013}
   cantidad: 10
-  distanciaAtaque: 6
+  distanciaAtaque: 7
   distance: 100
 --- !u!1 &1855763841 stripped
 GameObject:
