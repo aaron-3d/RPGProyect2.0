@@ -23,6 +23,8 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     private Vector2 smoothDeltaPosition = Vector2.zero;
     public Vector2 velocity = Vector2.zero;
     public float magnitude = 0.25f;
+    public float currentSpeed;
+
 
     public void Start()
     {
@@ -109,6 +111,20 @@ public class MovimientoPersonajeTercero : MonoBehaviour
             }
 
         }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            var velocidadActual = GetComponent<CamaraTercera>().speed;
+            currentSpeed = velocidadActual;
+            _movement.speed = velocidadActual/2;
+        }
+
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            print("se suelta la s");
+            _movement.speed = currentSpeed;
+        }
+
         if (Input.GetMouseButtonUp(0))
             if (healthDamage.conArma == true)
             {
@@ -140,7 +156,6 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     }
     IEnumerator WaitForJump(float delay)
     {
-
         yield return new WaitForSeconds(delay);
     }
 }

@@ -15,7 +15,7 @@ public class EnemigoCombate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Consola");
+
     }
 
     // Update is called once per frame
@@ -28,11 +28,9 @@ public class EnemigoCombate : MonoBehaviour
     {
         if (other.gameObject.tag == "Espada")
         {
-            Debug.Log("Se produce un choque entre el enemigo y la espada.");
             if (anim != null)
             {
                 anim.Play("EsqueletoRecibeGolpe");             
-                Debug.Log("Se produce la animación.");
                 vidaEnemigo -= dañoRecibido;
                 if(vidaEnemigo <= 0)
                 {
