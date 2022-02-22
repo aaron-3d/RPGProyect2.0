@@ -7,6 +7,8 @@ public class ScriptArmas : MonoBehaviour
     public BoxCollider[] armasCollider;
     public BoxCollider puñoCollider;
 
+    public GameObject[] armas;
+    public HealthDamage healthDamage;
 
     public void Start()
     {
@@ -15,11 +17,32 @@ public class ScriptArmas : MonoBehaviour
 
     public void ActivarColliderArmas()
     {
-        armasCollider[0].enabled = true;
+        for (int i = 0; i < armasCollider.Length; i++)
+        {
+            if (healthDamage.conArma)
+            {
+                if (armasCollider[i] != null)
+                {
+                    armasCollider[i].enabled = true;
+                }
+            }
+            else
+            {
+                puñoCollider.enabled = true;
+            }
+        }
     }
 
     public void DesactivarColliderArmas()
     {
-        armasCollider[0].enabled = false;
+        for (int i = 0; i < armasCollider.Length; i++)
+        {
+            if (armasCollider[i] != null)
+            {
+                armasCollider[i].enabled = false;
+            }
+        }
+        puñoCollider.enabled = false;
     }
+
 }
