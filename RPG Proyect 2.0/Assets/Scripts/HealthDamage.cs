@@ -9,7 +9,7 @@ public class HealthDamage : MonoBehaviour
     public bool invencible = false;
 
     public float tiempoInvencible = 1;
-    public float tiempoFrenado = 0.2f;
+    //public float tiempoFrenado = 0.2f;
 
     public CamaraTercera camaraTercera;
 
@@ -23,6 +23,8 @@ public class HealthDamage : MonoBehaviour
     public bool isPlayer;
     [SerializeField]
     public bool conArma = false;
+
+    public float velocidadMaxima = 0;
 
     private void Start()
     {
@@ -38,8 +40,8 @@ public class HealthDamage : MonoBehaviour
         {
             vidaP -= cantidad;
             anim.Play("TakeDamage1");
-            StartCoroutine(Invulnerabilidad());
-            StartCoroutine(FrenarVelocidad());
+            StartCoroutine(Invulnerabilidad(1f));
+            StartCoroutine(FrenarVelocidad(0.2f));
             healthBarSlider.SetHealth(vidaP);
 
             if (vidaP <= 0)
@@ -91,18 +93,22 @@ public class HealthDamage : MonoBehaviour
         deathOverlay.SetActive(false);
     }
 
-    IEnumerator Invulnerabilidad()
+    public IEnumerator Invulnerabilidad(float tiempoInvencible)
     {
         invencible = true;
         yield return new WaitForSeconds(tiempoInvencible);
         invencible = false;
     }
 
-    IEnumerator FrenarVelocidad()
+    public IEnumerator FrenarVelocidad(float tiempoFrenado)
     {
         var velocidadActual = GetComponent<CamaraTercera>().speed;
+        if (velocidadActual > velocidadMaxima)
+        {
+            velocidadMaxima = velocidadActual;
+        }
         GetComponent<CamaraTercera>().speed = 0.02f;
         yield return new WaitForSeconds(tiempoFrenado);
-        GetComponent<CamaraTercera>().speed = velocidadActual;
+        GetComponent<CamaraTercera>().speed = velocidadMaxima;
     }
 }

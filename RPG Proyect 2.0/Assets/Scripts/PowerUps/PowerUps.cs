@@ -14,6 +14,7 @@ public class PowerUps : MonoBehaviour
     private AudioSource audio;
     public TextMeshProUGUI textoPowerUpVida;
 
+    public EnemigoCombate enemigoCombate;
 
     void Start()
     {
@@ -69,9 +70,10 @@ public class PowerUps : MonoBehaviour
                     StartCoroutine(Destroy(2));             
             }
             else if (gameObject.tag == "PowerUpDamage")
-            {              
-                    //other.GetComponent<HealthDamage>().SumarSpeed(cantidadSpeed);
-                    Debug.Log("Daño aumentado(+x)");
+            {
+                enemigoCombate.dañoRecibido += 10;
+                enemigoCombate.dañoRecibidoPuño += 5;
+                Debug.Log("Daño aumentado(+x)");
                     StartCoroutine(ShowMessage("Daño aumentado", 2));
                     gameObject.GetComponent<BoxCollider>().enabled = false;
                     anim.Play("PowerUpShrink3");
