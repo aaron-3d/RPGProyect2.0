@@ -24,6 +24,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     public Vector2 velocity = Vector2.zero;
     public float magnitude = 0.25f;
     public float currentSpeed;
+    public GameObject arma;
 
 
     public void Start()
@@ -67,6 +68,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         if(_movement._move.magnitude >= 0.01f)
         {
             _animator.SetBool("Semueve", true);
+
         }
         else
         {
@@ -98,18 +100,17 @@ public class MovimientoPersonajeTercero : MonoBehaviour
             _animator.SetBool("Salta", false);
             print("Se pone false");
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            if(healthDamage.conArma == true)
-            {
-                _animator.SetBool("conArma", true);
-                // animator.ResetTrigger("Punch");
-            }
-            else
-            {
-                _animator.SetBool("Puñetazo", true);
-            }
 
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            _animator.SetBool("Dancing", true);
+            arma.SetActive(false);
+
+        }
+        if (Input.GetKeyUp(KeyCode.U))
+        {
+            _animator.SetBool("Dancing", false);
+            arma.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.S))
@@ -123,6 +124,21 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         {
             print("se suelta la s");
             _movement.speed = currentSpeed;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (healthDamage.conArma == true)
+            {
+                _animator.SetBool("conArma", true);
+                // animator.ResetTrigger("Punch");
+                StartCoroutine(healthDamage.FrenarVelocidad(1f));
+            }
+            else
+            {
+                _animator.SetBool("Puñetazo", true);
+                StartCoroutine(healthDamage.FrenarVelocidad(1.5f));
+            }
         }
 
         if (Input.GetMouseButtonUp(0))

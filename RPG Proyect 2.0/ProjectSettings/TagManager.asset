@@ -14,6 +14,7 @@ TagManager:
   - Slot
   - Item
   - Eliminar
+  - "Pu\xF1o"
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Minimap
   - 
   - 
   - 
