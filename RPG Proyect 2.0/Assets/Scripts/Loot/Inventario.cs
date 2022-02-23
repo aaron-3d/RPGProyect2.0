@@ -56,7 +56,7 @@ public class Inventario : MonoBehaviour
     {
         Arrastrar();
     }
-    void Arrastrar()
+    void Arrastrar() 
     {
         if (Input.GetMouseButtonDown(1))
         {
@@ -89,20 +89,38 @@ public class Inventario : MonoBehaviour
                 pointerData.position = Input.mousePosition;
                 raycastResults.Clear(); //eliminar los resultados del RayCast
                 graphRay.Raycast(pointerData, raycastResults); //para saber donde dejamos el item
+                objetoSeleccionado.transform.SetParent(exParent);
                 if (raycastResults.Count > 0)
                 {
                     foreach (var resultado in raycastResults)
                     {
-
+                        if (resultado.gameObject == objetoSeleccionado) continue;
                         if (resultado.gameObject.CompareTag("Slot")) //caso de slot libre
                         {
                             if (resultado.gameObject.GetComponentInChildren<Item>() == null)
                             {
                                 objetoSeleccionado.transform.SetParent(resultado.gameObject.transform);
-                                objetoSeleccionado.transform.localPosition = Vector2.zero;
-                                exParent = objetoSeleccionado.transform.parent.transform;
+                                //objetoSeleccionado.transform.localPosition = Vector2.zero;
+                                //exParent = objetoSeleccionado.transform.parent.transform;
                             }
-                            else //caso de slot ocupado
+                            
+                            //***************
+                            if (resultado.gameObject.CompareTag("Item"))
+                            {
+                                if (resultado.gameObject.GetComponentInChildren<Item>().ID == objetoSeleccionado.GetComponent<Item>().ID) //acceder al ID y si es igual
+                                {
+                                    resultado.gameObject.GetComponentInChildren<Item>().cantidad += objetoSeleccionado.GetComponent<Item>().cantidad; //suma las cantidades de un mismo item, (2 pociones + 2 pociones)
+                                    Destroy(objetoSeleccionado.gameObject);
+                                }
+                                else //si el ID es distinto
+                                {
+                                    objetoSeleccionado.transform.SetParent(resultado.gameObject.transform.parent);
+                                    resultado.gameObject.transform.SetParent(exParent);
+                                    resultado.gameObject.transform.localPosition = Vector3.zero;
+                                }
+                            }
+                            //**********************
+                            /*else //caso de slot ocupado
                             {
                                 if (resultado.gameObject.GetComponentInChildren<Item>().ID == objetoSeleccionado.GetComponent<Item>().ID) //acceder al ID y si es igual
                                 {
@@ -112,14 +130,14 @@ public class Inventario : MonoBehaviour
                                 else //si el ID es distinto
                                 {
                                     objetoSeleccionado.transform.SetParent(exParent.transform);
-                                    objetoSeleccionado.transform.localPosition = Vector2.zero;
+                                    //objetoSeleccionado.transform.localPosition = Vector2.zero;
                                 }
-                            }
+                            }*/
                         }
-                        else
+                        /*else
                         {
                             objetoSeleccionado.transform.SetParent(exParent.transform);
-                            objetoSeleccionado.transform.localPosition = Vector2.zero;
+                            //objetoSeleccionado.transform.localPosition = Vector2.zero;
                         }
                         if (resultado.gameObject.CompareTag("Eliminar"))
                         {
@@ -132,7 +150,7 @@ public class Inventario : MonoBehaviour
                                 CE.gameObject.SetActive(false);
                                 EliminarItem(objetoSeleccionado.gameObject.GetComponent<Item>().ID, objetoSeleccionado.gameObject.GetComponent<Item>().cantidad);
                             }
-                        }
+                        }*/
                     }
                 }
                 objetoSeleccionado.transform.localPosition = Vector3.zero;

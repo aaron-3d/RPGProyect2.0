@@ -15,49 +15,49 @@ MonoBehaviour:
   baseDatos:
   - nombre: "Poci\xF3n De Vida"
     ID: 0
-    icono: {fileID: 21300000, guid: db005d11213e5da47b9769c2e6c56eee, type: 3}
+    icono: {fileID: 21300000, guid: e52ea25af699fd445b7046374f81a5b9, type: 3}
     tipo: 0
-    acumulable: 0
+    acumulable: 1
     descripcion: +20 de Vida
     Void: PocionSalud
   - nombre: Espada
     ID: 1
-    icono: {fileID: 21300000, guid: b2f3327f47464544293b6b9018e1296e, type: 3}
+    icono: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}
     tipo: 1
     acumulable: 0
-    descripcion: 
+    descripcion: "+10 de Da\xF1o"
     Void: Espada
   - nombre: Casco
     ID: 2
-    icono: {fileID: 21300000, guid: 5087bdcc637973d41abbd18802fb23d3, type: 3}
+    icono: {fileID: 21300000, guid: fd6e4fc32c78509458fc45ea4a478ba8, type: 3}
     tipo: 1
     acumulable: 0
     descripcion: 
     Void: Casco
   - nombre: Pechera
     ID: 3
-    icono: {fileID: 21300006, guid: a50747b7090647445a1aa71f3aefd771, type: 3}
+    icono: {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
     tipo: 1
     acumulable: 0
     descripcion: 
     Void: Pechera
   - nombre: Pantalones
     ID: 4
-    icono: {fileID: 21300024, guid: addd2af175d074643a3b1f29f6c23041, type: 3}
+    icono: {fileID: 21300000, guid: b8fb302c5768e334ca82005f50e58121, type: 3}
     tipo: 1
     acumulable: 0
     descripcion: 
     Void: Pantalones
   - nombre: Botas
     ID: 4
-    icono: {fileID: 0}
+    icono: {fileID: 21300000, guid: e420c5bc93cb2604695a893500c897e3, type: 3}
     tipo: 1
     acumulable: 0
     descripcion: 
     Void: Botas
   - nombre: Hacha
     ID: 5
-    icono: {fileID: 21300000, guid: 8708d80070522a043a1ab6a2b2775382, type: 3}
+    icono: {fileID: 21300000, guid: 172774604c1bee84185a69041576525b, type: 3}
     tipo: 1
     acumulable: 0
     descripcion: 
