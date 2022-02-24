@@ -126,7 +126,7 @@ public class CamaraTercera : MonoBehaviour
     //PowerUp Speed
     public void AddExtraSpeed(float cantidadSpeed)
     {
-        speed += 0.03f;
+        speed += 0.15f;
     }
 
 }

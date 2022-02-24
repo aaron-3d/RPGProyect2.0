@@ -17,6 +17,7 @@ public class HealthDamage : MonoBehaviour
     private Animator anim;
 
     public HealthBarSlider healthBarSlider;
+    public EnemigoCombate enemigoCombate;
 
     public GameObject deathOverlay;
     
@@ -61,6 +62,11 @@ public class HealthDamage : MonoBehaviour
                 GameOver();
             }
         }
+    }
+
+    public void QuitarVidaEnemigo(int cantidad)
+    {
+        enemigoCombate.vidaEnemigo -= cantidad;
     }
 
     public void SumarVida(int cantidad)

@@ -10,7 +10,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     
     public Rigidbody rb;
 
-    public float jumpForce = 3.2f;
+    public float jumpForce = 1500f;
     public Vector3 jump;
     public float availableJumps = 1;
     public float usedJumps = 0;

@@ -8,6 +8,7 @@ public class EnemigoCombate : MonoBehaviour
     public Animator anim;
     public int dañoRecibido = 25;
     public int dañoRecibidoPuño = 10;
+    private LootableObject lootableObject;
     //public bool invencible = false;
 
 
@@ -17,7 +18,7 @@ public class EnemigoCombate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        lootableObject = GetComponent<LootableObject>();
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class EnemigoCombate : MonoBehaviour
                 //StartCoroutine(healthDamage.Invulnerabilidad(0.3f));
                 if (vidaEnemigo <= 0)
                 {
+                    lootableObject.RealizarLoot();
                     Destroy(gameObject);
                     //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
                 }
@@ -52,6 +54,7 @@ public class EnemigoCombate : MonoBehaviour
                 //StartCoroutine(healthDamage.Invulnerabilidad(0.3f));
                 if (vidaEnemigo <= 0)
                 {
+                    lootableObject.RealizarLoot();
                     Destroy(gameObject);
                     //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
                 }

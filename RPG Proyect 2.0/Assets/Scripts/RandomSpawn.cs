@@ -35,8 +35,8 @@ public class RandomSpawn : MonoBehaviour
     //Here put the ranges where your object will appear, or put it in the inspector.
     private void SetRanges()
     {
-        Min = new Vector3(-520, 55, -443); //Random value.
-        Max = new Vector3(520, 55, -274); //Another ramdon value, just for the example.          
+        Min = new Vector3(30, 35, 498); //Random value.
+        Max = new Vector3(346, 35, 739); //Another ramdon value, just for the example.          
         Debug.Log("Posición:" + _randomPosition);
     }
 

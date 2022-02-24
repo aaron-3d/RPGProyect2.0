@@ -63,7 +63,7 @@ public class PowerUps : MonoBehaviour
             }
             else if (gameObject.tag == "PowerUpSpeed")
             {            
-                    other.GetComponent<CamaraTercera>().AddExtraSpeed(0.1f);
+                    other.GetComponent<CamaraTercera>().AddExtraSpeed(0.6f);
                     Debug.Log("Velocidad aumentada");
                     StartCoroutine(ShowMessage("¡Velocidad aumentada!", 2));
                     gameObject.GetComponent<BoxCollider>().enabled = false;
