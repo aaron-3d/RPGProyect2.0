@@ -21,8 +21,8 @@ public class DataBase : ScriptableObject
     public enum Tipo 
     { 
         consumible,
-        equipable,
-        powerUp
+        equipable
+        //,powerUp
     }
     public ObjetoInventario[] baseDatos;
 

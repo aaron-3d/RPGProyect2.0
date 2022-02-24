@@ -9,10 +9,11 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
 
+
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
-
+    Animator animator;
     public Vector2 turn;
 
     // Start is called before the first frame update
@@ -20,7 +21,9 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         Cursor.lockState = CursorLockMode.Locked;
-       
+        animator = GetComponent<Animator>();
+
+
     }
 
     // Update is called once per frame
@@ -32,7 +35,8 @@ public class ThirdPersonMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-
+        Debug.Log("Speed " + direction.magnitude);
+        animator.SetFloat("Speed", direction.magnitude);
 
         if (direction.magnitude >= 0.1f)
         {
@@ -42,6 +46,19 @@ public class ThirdPersonMovement : MonoBehaviour
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDirection.normalized * speed * Time.deltaTime);
         }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            animator.SetTrigger("Punch");
+           // animator.ResetTrigger("Punch");
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetTrigger("Jump");
+            // animator.ResetTrigger("Punch");
+        }
+
+
 
 
     }

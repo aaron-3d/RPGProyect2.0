@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172229c11b5fcff458c2dfb4933f7d55, type: 3}
+  m_Name: LootData
+  m_EditorClassIdentifier: 
+  prob:
+  - rareza: 30
+    reward: {fileID: 2702848061355773211, guid: 80efbd48a69688a45b1e0cc6bebf114f, type: 3}
+  - rareza: 30
+    reward: {fileID: 919132149155446097, guid: 04157d4be6081024a99ef629babf7760, type: 3}
+  - rareza: 30
+    reward: {fileID: 919132149155446097, guid: 1aa088a56bf3ef940a806272fe631bf4, type: 3}
+  - rareza: 20
+    reward: {fileID: 919132149155446097, guid: 2db023cd994f99243aa7c37831c670dc, type: 3}
+  - rareza: 30
+    reward: {fileID: 919132149155446097, guid: d175227b5183f9d408e58d7475d2fd8c, type: 3}

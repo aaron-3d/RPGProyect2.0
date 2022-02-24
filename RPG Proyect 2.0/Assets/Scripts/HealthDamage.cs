@@ -6,21 +6,26 @@ using UnityEngine.SceneManagement;
 public class HealthDamage : MonoBehaviour
 {
     public int vidaP = 100;
-    public int vidaEnemigo = 35;
+    public int maxHealth;
     public bool invencible = false;
 
     public float tiempoInvencible = 1;
-    public float tiempoFrenado = 0.2f;
+    //public float tiempoFrenado = 0.2f;
 
     public CamaraTercera camaraTercera;
 
     private Animator anim;
 
     public HealthBarSlider healthBarSlider;
-    public ParticleSystem healthParticles;
-    public ParticleSystem healthUpParticles;
 
     public GameObject deathOverlay;
+    
+    [SerializeField]
+    public bool isPlayer;
+    [SerializeField]
+    public bool conArma = false;
+
+    public float velocidadMaxima = 0;
 
     private void Start()
     {
@@ -30,38 +35,30 @@ public class HealthDamage : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void Update()
+    {
+
+        if(vidaP > maxHealth)
+        {
+            healthBarSlider.SetMaxHealth(vidaP);
+            maxHealth = vidaP;
+        }
+    }
+
     public void QuitarVida(int cantidad)
     {
         if(!invencible && vidaP > 0)
         {
             vidaP -= cantidad;
             anim.Play("TakeDamage1");
-            StartCoroutine(Invulnerabilidad());
-            StartCoroutine(FrenarVelocidad());
+            StartCoroutine(Invulnerabilidad(1f));
+            StartCoroutine(FrenarVelocidad(0.2f));
             healthBarSlider.SetHealth(vidaP);
-            healthParticles.Play();
 
             if (vidaP <= 0)
             {
                 vidaP = 0;
                 GameOver();
-            }
-        }
-    }
-
-    public void QuitarVidaEnemigo(int cantidad)
-    {
-        if (!invencible && vidaEnemigo > 0)
-        {
-            vidaEnemigo -= cantidad;
-            anim.Play("EsqueletoRecibeGolpe");
-            //StartCoroutine(Invulnerabilidad());
-            StartCoroutine(FrenarVelocidad());
-
-            if (vidaEnemigo <= 0)
-            {
-                vidaEnemigo = 0;
-                Destroy(gameObject);
             }
         }
     }
@@ -75,11 +72,10 @@ public class HealthDamage : MonoBehaviour
             //StartCoroutine(Invulnerabilidad());
             //StartCoroutine(FrenarVelocidad());
             healthBarSlider.SetHealth(vidaP);
-            healthUpParticles.Play();
-            if (vidaP > 100)
+            /*if(vidaP > 100)
             {
                 vidaP = 100;
-            }
+            }*/
         }
     }
 
@@ -87,6 +83,8 @@ public class HealthDamage : MonoBehaviour
     {
         Debug.Log("Has muerto.");
         deathOverlay.SetActive(true);
+        //anim.SetBool("Estamuerto", true);
+        //anim.SetTrigger("Estamuerto");
         //Freezear el juego
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
@@ -102,21 +100,26 @@ public class HealthDamage : MonoBehaviour
     public void Retry()
     {
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        //anim.SetBool("Estamuerto", false);
         deathOverlay.SetActive(false);
     }
 
-    IEnumerator Invulnerabilidad()
+    public IEnumerator Invulnerabilidad(float tiempoInvencible)
     {
         invencible = true;
         yield return new WaitForSeconds(tiempoInvencible);
         invencible = false;
     }
 
-    IEnumerator FrenarVelocidad()
+    public IEnumerator FrenarVelocidad(float tiempoFrenado)
     {
         var velocidadActual = GetComponent<CamaraTercera>().speed;
+        if (velocidadActual > velocidadMaxima)
+        {
+            velocidadMaxima = velocidadActual;
+        }
         GetComponent<CamaraTercera>().speed = 0.02f;
         yield return new WaitForSeconds(tiempoFrenado);
-        GetComponent<CamaraTercera>().speed = velocidadActual;
+        GetComponent<CamaraTercera>().speed = velocidadMaxima;
     }
 }

@@ -14,6 +14,8 @@ public class PowerUps : MonoBehaviour
     private AudioSource audio;
     public TextMeshProUGUI textoPowerUpVida;
 
+    public EnemigoCombate enemigoCombate;
+    
 
     void Start()
     {
@@ -45,11 +47,13 @@ public class PowerUps : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (this.tag == "PowerUpVida")
+        if (other.tag == "Player")
         {
-            if (other.tag == "Player") ;
+            if (this.tag == "PowerUpVida")
             {
-                other.GetComponent<HealthDamage>().SumarVida(cantidad);
+                //other.GetComponent<HealthDamage>().SumarVida(cantidad);
+                other.GetComponent<HealthDamage>().vidaP += 15;
+
                 StartCoroutine(ShowMessage("+15 HP", 2));
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 anim.Play("PowerUpShrink");
@@ -57,47 +61,39 @@ public class PowerUps : MonoBehaviour
                 StartCoroutine(PlaySound(1));
                 StartCoroutine(Destroy(2));
             }
-        }
-        else if (gameObject.tag == "PowerUpSpeed")
-        {
-            if (other.tag == "Player") ;
-            {
-                other.GetComponent<CamaraTercera>().AddExtraSpeed(0.1f);   
-                Debug.Log("Velocidad aumentada");
-                StartCoroutine(ShowMessage("¡Velocidad aumentada!", 2));
-                gameObject.GetComponent<BoxCollider>().enabled = false;
-                anim.Play("PowerUpShrink2");
-                audio.PlayOneShot(powerUpPopSound, volume);
-                StartCoroutine(PlaySound(1));
-                StartCoroutine(Destroy(2));
+            else if (gameObject.tag == "PowerUpSpeed")
+            {            
+                    other.GetComponent<CamaraTercera>().AddExtraSpeed(0.1f);
+                    Debug.Log("Velocidad aumentada");
+                    StartCoroutine(ShowMessage("¡Velocidad aumentada!", 2));
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    anim.Play("PowerUpShrink2");
+                    audio.PlayOneShot(powerUpPopSound, volume);
+                    StartCoroutine(PlaySound(1));
+                    StartCoroutine(Destroy(2));             
             }
-        }
-        else if (gameObject.tag == "PowerUpDamage")
-        {
-            if (other.tag == "Player");
+            else if (gameObject.tag == "PowerUpDamage")
             {
-                //other.GetComponent<HealthDamage>().SumarSpeed(cantidadSpeed);
+                enemigoCombate.dañoRecibido += 10;
+                enemigoCombate.dañoRecibidoPuño += 5;
                 Debug.Log("Daño aumentado(+x)");
-                StartCoroutine(ShowMessage("Daño aumentado", 2));
-                gameObject.GetComponent<BoxCollider>().enabled = false;
-                anim.Play("PowerUpShrink3");
-                audio.PlayOneShot(powerUpPopSound, volume);
-                StartCoroutine(PlaySound(1));
-                StartCoroutine(Destroy(2));
+                    StartCoroutine(ShowMessage("Daño aumentado", 2));
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    anim.Play("PowerUpShrink3");
+                    audio.PlayOneShot(powerUpPopSound, volume);
+                    StartCoroutine(PlaySound(1));
+                    StartCoroutine(Destroy(2));            
             }
-        }
-        else if (gameObject.tag == "PowerUpJump")
-        {
-            if (other.tag == "Player");
-            {
-                other.GetComponent<MovimientoPersonajeTercero>().AddExtraJump(1);
-                Debug.Log("Ahora puedes dar otro salto en el aire");
-                StartCoroutine(ShowMessage("Ahora puedes dar otro salto en el aire", 2));
-                gameObject.GetComponent<BoxCollider>().enabled = false;
-                anim.Play("PowerUpShrink4");
-                audio.PlayOneShot(powerUpPopSound, volume);
-                StartCoroutine(PlaySound(1));
-                StartCoroutine(Destroy(2));
+            else if (gameObject.tag == "PowerUpJump")
+            {                
+                    other.GetComponent<MovimientoPersonajeTercero>().AddExtraJump(1);
+                    Debug.Log("Ahora puedes dar otro salto en el aire");
+                    StartCoroutine(ShowMessage("Ahora puedes dar otro salto en el aire", 2));
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    anim.Play("PowerUpShrink4");
+                    audio.PlayOneShot(powerUpPopSound, volume);
+                    StartCoroutine(PlaySound(1));
+                    StartCoroutine(Destroy(2));              
             }
         }
     }

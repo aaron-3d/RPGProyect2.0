@@ -21,7 +21,7 @@ public class CamaraTercera : MonoBehaviour
     public float rotationPowerVertical = 3f;
     public float rotationLerp = 0.5f;
 
-    public float speed = 1f;
+    public float speed = 0.1f;
     public Camera camera;
 
     public float cantidadSpeed = 0.1f;
