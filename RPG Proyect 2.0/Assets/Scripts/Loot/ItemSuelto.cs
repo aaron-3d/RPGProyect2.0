@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +11,10 @@ public class ItemSuelto : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            ItemSuelto itSuelto = Inv.itemsSueltos.Find(x => x.ID == this.ID);
+            //ItemSuelto itSuelto = Inv.itemsSueltos.Find(x => x.ID == this.ID);
             Inv.AgregarItem(ID, cantidad);
 
-            if(itSuelto != null && Inv.item.DB.baseDatos[itSuelto.ID].acumulable)
+            /*if(itSuelto != null && Inv.item.DB.baseDatos[itSuelto.ID].acumulable)
             {
                 itSuelto.cantidad += this.cantidad;
             }
@@ -31,14 +30,15 @@ public class ItemSuelto : MonoBehaviour
             {
                 Inv.copiasItemsSueltos.Remove(this);
                 Destroy(this.gameObject);
-            }
+            }*/
 
-           // var jug = other.GetComponent<Jugador>();
+            /*var jug = other.GetComponent<Movimiento>();
             jug.invLocal.Add(this.gameObject);
-          //  jug.questTrack.VerificarItem(ID);
+            jug.questTrack.VerificarItem(ID);*/
 
             gameObject.SetActive(false);
 
         }
     }
 }
+    
