@@ -6,6 +6,7 @@ public class ScriptArmas : MonoBehaviour
 {
     public BoxCollider[] armasCollider;
     public BoxCollider puñoCollider;
+    public BoxCollider zombieFootCollider;
 
     public GameObject[] armas;
     public HealthDamage healthDamage;
@@ -13,6 +14,7 @@ public class ScriptArmas : MonoBehaviour
     public void Start()
     {
         DesactivarColliderArmas();
+        DesactivarColliderArmasZombie();
     }
 
     public void ActivarColliderArmas()
@@ -29,6 +31,7 @@ public class ScriptArmas : MonoBehaviour
             else
             {
                 puñoCollider.enabled = true;
+                //zombieFootCollider.enabled = false;
             }
         }
     }
@@ -43,6 +46,16 @@ public class ScriptArmas : MonoBehaviour
             }
         }
         puñoCollider.enabled = false;
+        zombieFootCollider.enabled = false;
+    }
+    public void ActivarColliderArmasZombie()
+    {
+        zombieFootCollider.enabled = true;
+    }
+
+    public void DesactivarColliderArmasZombie()
+    {
+        zombieFootCollider.enabled = false;
     }
 
 }

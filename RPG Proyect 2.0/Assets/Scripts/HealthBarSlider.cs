@@ -13,7 +13,7 @@ public class HealthBarSlider : MonoBehaviour
 
     void Update()
     {
-        textoVida.text = healthDamage.vidaP + "/100"; 
+        textoVida.text = healthDamage.vidaP + "/" + healthDamage.maxHealth; 
     }
 
     public void SetMaxHealth(int health)

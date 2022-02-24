@@ -122,7 +122,6 @@ public class MovimientoPersonajeTercero : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.S))
         {
-            print("se suelta la s");
             _movement.speed = currentSpeed;
         }
 

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HealthDamage : MonoBehaviour
 {
     public int vidaP = 100;
+    public int maxHealth;
     public bool invencible = false;
 
     public float tiempoInvencible = 1;
@@ -32,6 +33,16 @@ public class HealthDamage : MonoBehaviour
         healthBarSlider.SetMaxHealth(vidaP);
         deathOverlay.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void Update()
+    {
+
+        if(vidaP > maxHealth)
+        {
+            healthBarSlider.SetMaxHealth(vidaP);
+            maxHealth = vidaP;
+        }
     }
 
     public void QuitarVida(int cantidad)
@@ -61,10 +72,10 @@ public class HealthDamage : MonoBehaviour
             //StartCoroutine(Invulnerabilidad());
             //StartCoroutine(FrenarVelocidad());
             healthBarSlider.SetHealth(vidaP);
-            if(vidaP > 100)
+            /*if(vidaP > 100)
             {
                 vidaP = 100;
-            }
+            }*/
         }
     }
 

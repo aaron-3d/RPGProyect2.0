@@ -15,6 +15,7 @@ public class PowerUps : MonoBehaviour
     public TextMeshProUGUI textoPowerUpVida;
 
     public EnemigoCombate enemigoCombate;
+    
 
     void Start()
     {
@@ -50,7 +51,9 @@ public class PowerUps : MonoBehaviour
         {
             if (this.tag == "PowerUpVida")
             {
-                other.GetComponent<HealthDamage>().SumarVida(cantidad);
+                //other.GetComponent<HealthDamage>().SumarVida(cantidad);
+                other.GetComponent<HealthDamage>().vidaP += 15;
+
                 StartCoroutine(ShowMessage("+15 HP", 2));
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 anim.Play("PowerUpShrink");

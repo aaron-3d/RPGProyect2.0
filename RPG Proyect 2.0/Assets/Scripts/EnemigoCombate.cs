@@ -32,7 +32,7 @@ public class EnemigoCombate : MonoBehaviour
         {
             if (anim != null)
             {
-                anim.Play("ZombieRecibeGolpe");             
+                //anim.Play("ZombieRecibeGolpe");             
                 vidaEnemigo -= dañoRecibido;
                 //StartCoroutine(healthDamage.Invulnerabilidad(0.3f));
                 if (vidaEnemigo <= 0)
