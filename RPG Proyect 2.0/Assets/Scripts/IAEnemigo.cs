@@ -32,7 +32,7 @@ public class IAEnemigo : MonoBehaviour
             agent.speed = 0;
             _animator.SetBool("isChasing", false);
             _animator.SetBool("isAlone", true);
-            _animator.SetBool("isClose", false); // Esto hay que encajarlo en otra parte o el mob solo pega una vez cuando te empieza a perseguir
+            //_animator.SetBool("isClose", false); // Esto hay que encajarlo en otra parte o el mob solo pega una vez cuando te empieza a perseguir
         }
 
         if (Vector3.Distance(Target.transform.position, transform.position) <= distanciaAtaque)
@@ -40,7 +40,15 @@ public class IAEnemigo : MonoBehaviour
             _animator.SetBool("isClose", true);
             _animator.SetBool("isChasing", false);
             hasAttacked = true;
-            //Target.GetComponent<HealthDamage>().QuitarVida(cantidad);          
+            agent.speed = 2;
+            //Target.GetComponent<HealthDamage>().QuitarVida(cantidad);
+            //
+
+        }
+        else
+        {
+            _animator.SetBool("isClose", false);
+            agent.speed = 10;
         }
     }
 }

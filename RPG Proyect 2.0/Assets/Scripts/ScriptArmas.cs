@@ -15,6 +15,7 @@ public class ScriptArmas : MonoBehaviour
     {
         DesactivarColliderArmas();
         DesactivarColliderArmasZombie();
+        zombieFootCollider.enabled = false;
     }
 
     public void ActivarColliderArmas()
@@ -46,7 +47,7 @@ public class ScriptArmas : MonoBehaviour
             }
         }
         puñoCollider.enabled = false;
-        zombieFootCollider.enabled = false;
+        //zombieFootCollider.enabled = false;
     }
     public void ActivarColliderArmasZombie()
     {

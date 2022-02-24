@@ -77442,7 +77442,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.9
+  - time: 1.0333333
     functionName: DesactivarColliderArmasZombie
     data: 
     objectReferenceParameter: {fileID: 0}
