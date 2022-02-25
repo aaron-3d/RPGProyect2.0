@@ -43,7 +43,6 @@ public class IAEnemigo : MonoBehaviour
             agent.speed = 2;
             //Target.GetComponent<HealthDamage>().QuitarVida(cantidad);
             //
-
         }
         else
         {

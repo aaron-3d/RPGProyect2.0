@@ -19,6 +19,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
 
     public HealthDamage healthDamage;
 
+    public GameObject canvasInventario;
 
     private Vector2 smoothDeltaPosition = Vector2.zero;
     public Vector2 velocity = Vector2.zero;
@@ -45,6 +46,13 @@ public class MovimientoPersonajeTercero : MonoBehaviour
 
     public void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            canvasInventario.SetActive(!canvasInventario.activeInHierarchy);
+        }
+
+        
         Vector3 worldDeltaPosition = _movement.nextPosition- transform.position;
         
 
