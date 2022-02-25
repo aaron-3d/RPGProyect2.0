@@ -13,6 +13,7 @@ public class PowerUps : MonoBehaviour
     public float volume;
     private AudioSource audio;
     public TextMeshProUGUI textoPowerUpVida;
+    public static GameObject textoPowerUpVidaGO;
 
     public EnemigoCombate enemigoCombate;
     
