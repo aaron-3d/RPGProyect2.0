@@ -19,6 +19,7 @@ public class LootableObject : MonoBehaviour
         {
             spawnPoint = transform;
         }
+        
     }
 
     public void RealizarLoot()
