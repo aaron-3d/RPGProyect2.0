@@ -75,15 +75,18 @@ public class PowerUps : MonoBehaviour
             }
             else if (gameObject.tag == "PowerUpDamage")
             {
-                enemigoCombate.dañoRecibido += 10;
-                enemigoCombate.dañoRecibidoPuño += 5;
+                enemigoCombate.dañoRecibido += 5;
+                enemigoCombate.dañoRecibidoPC += 7;
+                enemigoCombate.dañoRecibidoLeg += 10;
+                //enemigoCombate.dañoRecibido += 10;
+                //enemigoCombate.dañoRecibidoPuño += 5;
                 Debug.Log("Daño aumentado(+x)");
-                    StartCoroutine(ShowMessage("Daño aumentado", 2));
-                    gameObject.GetComponent<BoxCollider>().enabled = false;
-                    anim.Play("PowerUpShrink3");
-                    audio.PlayOneShot(powerUpPopSound, volume);
-                    StartCoroutine(PlaySound(1));
-                    StartCoroutine(Destroy(2));            
+                StartCoroutine(ShowMessage("Daño aumentado", 2));
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+                anim.Play("PowerUpShrink3");
+                audio.PlayOneShot(powerUpPopSound, volume);
+                StartCoroutine(PlaySound(1));
+                StartCoroutine(Destroy(2));            
             }
             else if (gameObject.tag == "PowerUpJump")
             {                
@@ -95,6 +98,16 @@ public class PowerUps : MonoBehaviour
                     audio.PlayOneShot(powerUpPopSound, volume);
                     StartCoroutine(PlaySound(1));
                     StartCoroutine(Destroy(2));              
+            }
+            else if (gameObject.tag == "PiedraPowerUp")
+            {
+                StartCoroutine(ShowMessage("¿?", 2));
+                StartCoroutine(Destroy(2));
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+                anim.Play("PowerUpShrink5");
+                audio.PlayOneShot(powerUpPopSound, volume);
+                StartCoroutine(PlaySound(1));
+                
             }
         }
     }

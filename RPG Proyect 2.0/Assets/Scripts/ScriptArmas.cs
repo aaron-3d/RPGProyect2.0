@@ -10,7 +10,23 @@ public class ScriptArmas : MonoBehaviour
 
     public GameObject[] armas;
     public HealthDamage healthDamage;
+    public EnemigoCombate enemigoCombate;
 
+    public void Update()
+    {
+        /*if(armasCollider[0])
+        {
+            EnemigoCombate.dañoRecibido = 10;
+        }
+        else if (armasCollider[1])
+        {
+            EnemigoCombate.dañoRecibido = 25;
+        }
+        else if (armasCollider[2])
+        {
+            EnemigoCombate.dañoRecibido = 50;
+        }*/
+    }
     public void Start()
     {
         DesactivarColliderArmas();

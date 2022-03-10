@@ -6,10 +6,13 @@ public class EnemigoCombate : MonoBehaviour
 {
     public int vidaEnemigo;
     public Animator anim;
-    public int dañoRecibido = 25;
+    public int dañoRecibido = 15;
+    public int dañoRecibidoPC = 25;
+    public int dañoRecibidoLeg = 50;
     public int dañoRecibidoPuño = 10;
     private LootableObject lootableObject;
     //public bool invencible = false;
+    
 
 
     //public HealthDamage healthDamage;
@@ -31,6 +34,7 @@ public class EnemigoCombate : MonoBehaviour
         {
         if (other.gameObject.tag == "Espada")
         {
+
             if (anim != null)
             {
                 //anim.Play("ZombieRecibeGolpe");             
@@ -42,6 +46,26 @@ public class EnemigoCombate : MonoBehaviour
                     Destroy(gameObject);
                     //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
                 }
+            }
+        }
+        else if (other.gameObject.tag == "EspadaPocoComun")
+        {
+            vidaEnemigo -= dañoRecibidoPC;
+            if (vidaEnemigo <= 0)
+            {
+                lootableObject.RealizarLoot();
+                Destroy(gameObject);
+                //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
+            }
+        }
+        else if (other.gameObject.tag == "EspadaLegendaria")
+        {
+            vidaEnemigo -= dañoRecibidoPC;
+            if (vidaEnemigo <= 0)
+            {
+                lootableObject.RealizarLoot();
+                Destroy(gameObject);
+                //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
             }
         }
 

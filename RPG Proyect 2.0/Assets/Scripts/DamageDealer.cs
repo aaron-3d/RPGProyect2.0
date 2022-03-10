@@ -17,6 +17,7 @@ public class DamageDealer : MonoBehaviour
         {
             Debug.Log("Daño de Espada");
             other.GetComponent<HealthDamage>().QuitarVidaEnemigo(cantidad);
+            Debug.Log("Enemigo ha perdido vida");
         }
     }
 
