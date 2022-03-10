@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cantidad: 1
   cantidadTexto: {fileID: 428738246013772300}
-  ID: 2
+  ID: 0
   acumulable: 0
   Boton: {fileID: 1622257040596037656}
   _descripcion: {fileID: 0}

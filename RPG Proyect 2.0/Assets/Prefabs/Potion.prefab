@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3371403166540535713}
   - component: {fileID: 1830285281044568068}
   - component: {fileID: 4504318217884888270}
-  - component: {fileID: -2025700979853983656}
+  - component: {fileID: 2149429723860184571}
+  - component: {fileID: 2196990146492517761}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2702848061355773211}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.825998, y: 1.0321093, z: -11.97815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -86,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-2025700979853983656
+--- !u!114 &2149429723860184571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,16 +96,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2702848061355773211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ad26364a623e840be5bdfbef73f88e, type: 3}
+  m_Script: {fileID: 11500000, guid: b611043a7e69ec04f863db942f7a29a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cantidad: 1
-  cantidadTexto: {fileID: 0}
   ID: 0
-  acumulable: 1
-  Boton: {fileID: 0}
-  _descripcion: {fileID: 0}
-  Nombre_: {fileID: 0}
-  Dato_: {fileID: 0}
-  offset: {x: -100, y: 0, z: 0}
-  DB: {fileID: 0}
+  Inv: {fileID: 0}
+--- !u!65 &2196990146492517761
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2702848061355773211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7666059, y: 2.7887063, z: 1.7666059}
+  m_Center: {x: 0, y: 0.3622411, z: 0}
