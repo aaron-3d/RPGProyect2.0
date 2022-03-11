@@ -15,11 +15,15 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     public float availableJumps = 1;
     public float usedJumps = 0;
 
+    public bool puedeAtacar;
+
     public int cantidadSaltos = 1;
 
     public HealthDamage healthDamage;
 
     public GameObject canvasInventario;
+
+    public Inventario InvRef;
 
     private Vector2 smoothDeltaPosition = Vector2.zero;
     public Vector2 velocity = Vector2.zero;
@@ -27,10 +31,16 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     public float currentSpeed;
     public GameObject arma;
 
-
+    public void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        InvRef = GetComponent<Inventario>();
+        puedeAtacar = true;
+    }
     public void Start()
     {
         jump = new Vector3(0.0f, 3.2f, 0.0f);
+        puedeAtacar = true;
     }
 
     private void OnEnable()
@@ -39,125 +49,143 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    public void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    
 
     public void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             canvasInventario.SetActive(!canvasInventario.activeInHierarchy);
         }
-
-        
-        Vector3 worldDeltaPosition = _movement.nextPosition- transform.position;
-        
-
-        //Map to local space
-        float dX = Vector3.Dot(transform.right, worldDeltaPosition);
-        float dY = Vector3.Dot(transform.forward, worldDeltaPosition);
-        Vector2 deltaPosition = new Vector2(dX, dY);
-
-        float smooth = Mathf.Min(1.0f, Time.deltaTime / 0.15f);
-        smoothDeltaPosition = Vector2.Lerp(smoothDeltaPosition, deltaPosition, smooth);
-
-        if (Time.deltaTime > 1e-5f)
+        /*if (!canvasInventario.activeInHierarchy && canvasInventario.GetComponent<Inventario>().objetoSeleccionado != null)
         {
-            velocity = smoothDeltaPosition / Time.deltaTime;
-            
-        }
-        
-        //Debug.Log("Speed " + direction.magnitude);
-        _animator.SetFloat("Speed", _movement._move.magnitude);
-
-        if(_movement._move.magnitude >= 0.01f)
+            canvasInventario.GetComponent<Inventario>().objetoSeleccionado.transform.SetParent(canvasInventario.GetComponent<Inventario>().exParent);
+            canvasInventario.GetComponent<Inventario>().objetoSeleccionado.transform.localPosition = Vector3.zero;
+            canvasInventario.GetComponent<Inventario>().objetoSeleccionado = null;
+        }*/
+        if (canvasInventario.activeInHierarchy)
         {
-            _animator.SetBool("Semueve", true);
-
+            puedeAtacar = false;
         }
         else
         {
-            _animator.SetBool("Semueve", false);
+            puedeAtacar = true;
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (puedeAtacar == true)
         {
-            //StartCoroutine(WaitForJump(1));
-            if (usedJumps == 0)
+
+
+
+            Vector3 worldDeltaPosition = _movement.nextPosition - transform.position;
+
+
+            //Map to local space
+            float dX = Vector3.Dot(transform.right, worldDeltaPosition);
+            float dY = Vector3.Dot(transform.forward, worldDeltaPosition);
+            Vector2 deltaPosition = new Vector2(dX, dY);
+
+            float smooth = Mathf.Min(1.0f, Time.deltaTime / 0.15f);
+            smoothDeltaPosition = Vector2.Lerp(smoothDeltaPosition, deltaPosition, smooth);
+            
+
+            if (Time.deltaTime > 1e-5f)
             {
-                rb.AddForce(jump * jumpForce, 0);
-                _animator.SetBool("Salta", true);
-                print("Se pone true");
-                usedJumps += 1;
+                velocity = smoothDeltaPosition / Time.deltaTime;
+
             }
 
-            else if (availableJumps > usedJumps)
+            //Debug.Log("Speed " + direction.magnitude);
+            _animator.SetFloat("Speed", _movement._move.magnitude);
+
+            if (_movement._move.magnitude >= 0.01f)
             {
-                rb.AddForce(jump * jumpForce, 0);
-                //_animator.SetBool("Salta", true);
-                print("Se pone true");
-                usedJumps += 1;
-            }
+                _animator.SetBool("Semueve", true);
 
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            _animator.SetBool("Salta", false);
-            print("Se pone false");
-        }
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            _animator.SetBool("Dancing", true);
-            arma.SetActive(false);
-
-        }
-        if (Input.GetKeyUp(KeyCode.U))
-        {
-            _animator.SetBool("Dancing", false);
-            arma.SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            var velocidadActual = GetComponent<CamaraTercera>().speed;
-            currentSpeed = velocidadActual;
-            _movement.speed = velocidadActual/2;
-        }
-
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-            _movement.speed = currentSpeed;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (healthDamage.conArma == true)
-            {
-                _animator.SetBool("conArma", true);
-                // animator.ResetTrigger("Punch");
-                StartCoroutine(healthDamage.FrenarVelocidad(1f));
             }
             else
             {
-                _animator.SetBool("Puñetazo", true);
-                StartCoroutine(healthDamage.FrenarVelocidad(1.5f));
+                _animator.SetBool("Semueve", false);
             }
-        }
 
-        if (Input.GetMouseButtonUp(0))
-            if (healthDamage.conArma == true)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                _animator.SetBool("conArma", false);
-                // animator.ResetTrigger("Punch");
+                //StartCoroutine(WaitForJump(1));
+                if (usedJumps == 0)
+                {
+                    rb.AddForce(jump * jumpForce, 0);
+                    _animator.SetBool("Salta", true);
+                    
+                    usedJumps += 1;
+                }
+
+                else if (availableJumps > usedJumps)
+                {
+                    rb.AddForce(jump * jumpForce, 0);
+                    //_animator.SetBool("Salta", true);
+                    
+                    usedJumps += 1;
+                    
+                }
+
             }
-            else
+            if (Input.GetKeyUp(KeyCode.Space))
             {
-                _animator.SetBool("Puñetazo", false);
+                _animator.SetBool("Salta", false);
+                print("Se pone false");
             }
+
+            if (Input.GetKeyDown(KeyCode.U))
+            {
+                _animator.SetBool("Dancing", true);
+                arma.SetActive(false);
+
+            }
+            if (Input.GetKeyUp(KeyCode.U))
+            {
+                _animator.SetBool("Dancing", false);
+                arma.SetActive(true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                var velocidadActual = GetComponent<CamaraTercera>().speed;
+                currentSpeed = velocidadActual;
+                _movement.speed = velocidadActual / 2;
+            }
+
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                _movement.speed = currentSpeed;
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (healthDamage.conArma == true)
+                {
+                    _animator.SetBool("conArma", true);
+                    // animator.ResetTrigger("Punch");
+                    StartCoroutine(healthDamage.FrenarVelocidad(1f));
+                }
+                else
+                {
+                    _animator.SetBool("Puñetazo", true);
+                    StartCoroutine(healthDamage.FrenarVelocidad(1.5f));
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+                if (healthDamage.conArma == true)
+                {
+                    _animator.SetBool("conArma", false);
+                    // animator.ResetTrigger("Punch");
+                    print("AQUI LLEGA");
+                }
+                else
+                {
+                    _animator.SetBool("Puñetazo", false);
+                }
+        }
     }
 
     public void AddExtraJump(int cantidadSaltos)

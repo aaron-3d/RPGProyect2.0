@@ -26,7 +26,7 @@ public class CamaraTercera : MonoBehaviour
 
     public float cantidadSpeed = 0.1f;
 
-    
+    public MovimientoPersonajeTercero RefMovTerPer;
 
     private void Awake()
     {
@@ -94,32 +94,34 @@ public class CamaraTercera : MonoBehaviour
         followTransform.transform.localEulerAngles = angles;
         #endregion
 
-
-        nextRotation = Quaternion.Lerp(followTransform.transform.rotation, nextRotation, Time.deltaTime * rotationLerp);
-
-        if (_move.x == 0 && _move.y == 0)
+        if (RefMovTerPer.puedeAtacar)
         {
-            nextPosition = transform.position;
+            nextRotation = Quaternion.Lerp(followTransform.transform.rotation, nextRotation, Time.deltaTime * rotationLerp);
 
-            if (aimValue == 1)
+            if (_move.x == 0 && _move.y == 0)
             {
-                //Set the player rotation based on the look transform
-                transform.rotation = Quaternion.Euler(0, followTransform.transform.rotation.eulerAngles.y, 0);
-                //reset the y rotation of the look transform
-                followTransform.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
+                nextPosition = transform.position;
+
+                if (aimValue == 1)
+                {
+                    //Set the player rotation based on the look transform
+                    transform.rotation = Quaternion.Euler(0, followTransform.transform.rotation.eulerAngles.y, 0);
+                    //reset the y rotation of the look transform
+                    followTransform.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
+                }
+
+                return;
             }
+            float moveSpeed = speed / 2f;
+            Vector3 position = (transform.forward * _move.y * moveSpeed) + (transform.right * _move.x * moveSpeed);
+            nextPosition = transform.position + position;
 
-            return;
+
+            //Set the player rotation based on the look transform
+            //transform.rotation = Quaternion.Euler(0, followTransform.transform.rotation.eulerAngles.y, 0);
+            //reset the y rotation of the look transform
+            followTransform.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
         }
-        float moveSpeed = speed / 2f;
-        Vector3 position = (transform.forward * _move.y * moveSpeed) + (transform.right * _move.x * moveSpeed);
-        nextPosition = transform.position + position;
-
-
-        //Set the player rotation based on the look transform
-        //transform.rotation = Quaternion.Euler(0, followTransform.transform.rotation.eulerAngles.y, 0);
-        //reset the y rotation of the look transform
-        followTransform.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
     }
 
 

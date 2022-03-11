@@ -36,7 +36,10 @@ public class Inventario : MonoBehaviour
 
     public Transform contenido;
     public Item item;
+    public List<ItemSuelto> itemsSueltos = new List<ItemSuelto>();
     public List<ObjetoInvId> inventarioo = new List<ObjetoInvId>();
+
+    public Transform ItemSueltoRespawn;
     void Start()
     {
         InventoryUpdate();
@@ -44,9 +47,9 @@ public class Inventario : MonoBehaviour
         pointerData = new PointerEventData(null);
         raycastResults = new List<RaycastResult>();
 
-        Descripcion = GameObject.Find("Descripcion");
+        //Descripcion = GameObject.Find("Descripcion");
 
-        //CE.gameObject.SetActive(false);
+        CE.gameObject.SetActive(false);
 
         canvas = transform.parent.transform;
     }
@@ -196,6 +199,21 @@ public class Inventario : MonoBehaviour
             if (inventarioo[i].id == id)
             {
                 inventarioo[i] = new ObjetoInvId(inventarioo[i].id, inventarioo[i].cantidad - cantidad);
+
+                for(int n = 0; n < itemsSueltos.Count; n++)
+                {
+                    if(itemsSueltos[n].ID == id)
+                    {
+                        itemsSueltos[n].gameObject.SetActive(true);
+                        itemsSueltos[n].transform.position = ItemSueltoRespawn.position;
+                        itemsSueltos[n].transform.SetParent(null);
+                        itemsSueltos.Remove(itemsSueltos[n]);
+                    }
+                }
+
+
+
+
                 if (inventarioo[i].cantidad <= 0)
                 {
                     inventarioo.Remove(inventarioo[i]);
