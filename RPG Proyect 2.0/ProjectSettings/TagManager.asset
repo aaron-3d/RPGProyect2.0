@@ -19,6 +19,7 @@ TagManager:
   - EspadaPocoComun
   - Piedra
   - PiedraPowerUp
+  - DontDestroy
   layers:
   - Default
   - TransparentFX
