@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(NavMeshAgent))]
 public class CamaraTercera : MonoBehaviour
 {
+
     private NavMeshAgent _agent;
     public Vector2 _move;
     public Vector2 _look;
@@ -100,6 +101,7 @@ public class CamaraTercera : MonoBehaviour
         if (_move.x == 0 && _move.y == 0)
         {
             nextPosition = transform.position;
+            
 
             if (aimValue == 1)
             {
@@ -128,5 +130,6 @@ public class CamaraTercera : MonoBehaviour
     {
         speed += 0.01f;
     }
+
 
 }
