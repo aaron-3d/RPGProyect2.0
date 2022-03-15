@@ -20,6 +20,10 @@ TagManager:
   - Piedra
   - PiedraPowerUp
   - DontDestroy
+  - EspadaComun
+  - EspadaPocoComunPowerUp
+  - EspadaLegendariaPowerUp
+  - EspadaComunPowerUp
   layers:
   - Default
   - TransparentFX

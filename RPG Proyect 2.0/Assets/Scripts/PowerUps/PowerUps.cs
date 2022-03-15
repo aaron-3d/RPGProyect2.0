@@ -15,7 +15,14 @@ public class PowerUps : MonoBehaviour
     public TextMeshProUGUI textoPowerUpVida;
     public static GameObject textoPowerUpVidaGO;
 
+    public GameObject espadaComun;
+    public GameObject espadaPocoComun;
+    public GameObject espadaLegendaria;
+
     public EnemigoCombate enemigoCombate;
+    public MovimientoPersonajeTercero movimientoPersonajeTercero;
+
+    //public GameObject player;
     
 
     void Start()
@@ -23,7 +30,6 @@ public class PowerUps : MonoBehaviour
         audio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
     }
-
 
 
     IEnumerator ShowMessage(string message, float delay)
@@ -75,9 +81,9 @@ public class PowerUps : MonoBehaviour
             }
             else if (gameObject.tag == "PowerUpDamage")
             {
-                enemigoCombate.dañoRecibido += 5;
-                enemigoCombate.dañoRecibidoPC += 7;
-                enemigoCombate.dañoRecibidoLeg += 10;
+                EnemigoCombate.dañoRecibido += 5;
+                EnemigoCombate.dañoRecibidoPC += 7;
+                EnemigoCombate.dañoRecibidoLeg += 10;
                 //enemigoCombate.dañoRecibido += 10;
                 //enemigoCombate.dañoRecibidoPuño += 5;
                 Debug.Log("Daño aumentado(+x)");
@@ -108,6 +114,21 @@ public class PowerUps : MonoBehaviour
                 audio.PlayOneShot(powerUpPopSound, volume);
                 StartCoroutine(PlaySound(1));
                 
+            }
+            else if (gameObject.tag == "EspadaComunPowerUp" && (movimientoPersonajeTercero.arma == null))
+            {
+                movimientoPersonajeTercero.arma = espadaComun;
+                StartCoroutine(Destroy(0));
+            }
+            else if (gameObject.tag == "EspadaPocoComunPowerUp" && (movimientoPersonajeTercero.arma == espadaComun || movimientoPersonajeTercero.arma == null))
+            {
+                movimientoPersonajeTercero.arma = espadaPocoComun;
+                StartCoroutine(Destroy(0));
+            }
+            else if (gameObject.tag == "EspadaLegendariaPowerUp" && (movimientoPersonajeTercero.arma == espadaComun || movimientoPersonajeTercero.arma == espadaPocoComun || movimientoPersonajeTercero.arma == null))
+            {
+                movimientoPersonajeTercero.arma = espadaLegendaria;
+                StartCoroutine(Destroy(0));
             }
         }
     }

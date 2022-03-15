@@ -32,6 +32,7 @@ public class ScriptArmas : MonoBehaviour
         DesactivarColliderArmas();
         DesactivarColliderArmasZombie();
         zombieFootCollider.enabled = false;
+        puñoCollider.enabled = false;
     }
 
     public void ActivarColliderArmas()
@@ -55,6 +56,8 @@ public class ScriptArmas : MonoBehaviour
 
     public void DesactivarColliderArmas()
     {
+        puñoCollider.enabled = false;
+
         for (int i = 0; i < armasCollider.Length; i++)
         {
             if (armasCollider[i] != null)
@@ -62,7 +65,7 @@ public class ScriptArmas : MonoBehaviour
                 armasCollider[i].enabled = false;
             }
         }
-        puñoCollider.enabled = false;
+        
         //zombieFootCollider.enabled = false;
     }
     public void ActivarColliderArmasZombie()

@@ -22,6 +22,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     public int cantidadSaltos = 1;
 
     public HealthDamage healthDamage;
+    public PowerUps powerUps;
 
     public GameObject canvasInventario;
 
@@ -30,6 +31,10 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     public float magnitude = 0.25f;
     public float currentSpeed;
     public GameObject arma;
+    public GameObject espadaComun;
+    public GameObject espadaPocoComun;
+    public GameObject espadaLegendaria;
+
 
 
     public void Start()
@@ -56,7 +61,24 @@ public class MovimientoPersonajeTercero : MonoBehaviour
             canvasInventario.SetActive(!canvasInventario.activeInHierarchy);
         }
 
-        
+        if(arma == espadaComun)
+        {
+            espadaComun.SetActive(true);
+            healthDamage.conArma = true;
+        }
+        else if (arma == espadaPocoComun)
+        {
+            espadaComun.SetActive(false);
+            espadaPocoComun.SetActive(true);
+            healthDamage.conArma = true;
+        }
+        else if (arma == espadaLegendaria)
+        {
+            espadaPocoComun.SetActive(false);
+            espadaLegendaria.SetActive(true);
+            healthDamage.conArma = true;
+        }
+
         Vector3 worldDeltaPosition = _movement.nextPosition- transform.position;
         
 
@@ -197,5 +219,15 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     public void CreateJumpDust()
     {
         jumpDust.Play();
+    }
+
+    public void OcultarArma()
+    {
+        arma.SetActive(false);
+    }
+
+    public void MostrarArma()
+    {
+        arma.SetActive(true);
     }
 }
