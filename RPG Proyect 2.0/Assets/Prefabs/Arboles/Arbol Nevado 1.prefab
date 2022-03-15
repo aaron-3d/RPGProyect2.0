@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 1130280243773453115}
   - component: {fileID: 8629759776905067252}
   - component: {fileID: 5620685318512247807}
+  - component: {fileID: 2782507313055896172}
   m_Layer: 0
   m_Name: Arbol nevado 1_LOD0
   m_TagString: Untagged
@@ -237,6 +238,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2782507313055896172
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463858222314902115}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5622692442070493773, guid: 4d408ad3cbfd0204dbd3d94c43c0f2ee, type: 3}
 --- !u!1 &5193874906244681167
 GameObject:
   m_ObjectHideFlags: 0
