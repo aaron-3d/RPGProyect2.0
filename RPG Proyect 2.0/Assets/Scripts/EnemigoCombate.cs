@@ -14,6 +14,8 @@ public class EnemigoCombate : MonoBehaviour
     private LootableObject lootableObject;
     public TextMeshProUGUI damageText;
     public Animator animacionTexto;
+
+    public GameObject deadEnemy;
     //public bool invencible = false;
     
 
@@ -51,6 +53,7 @@ public class EnemigoCombate : MonoBehaviour
                 {
                     lootableObject.RealizarLoot();
                     Destroy(gameObject);
+                    Instantiate(deadEnemy, transform.position, transform.rotation);
                     //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
                 }
             }
@@ -66,6 +69,7 @@ public class EnemigoCombate : MonoBehaviour
             {
                 lootableObject.RealizarLoot();
                 Destroy(gameObject);
+                Instantiate(deadEnemy, transform.position, transform.rotation);
                 //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
             }
         }
@@ -80,6 +84,7 @@ public class EnemigoCombate : MonoBehaviour
             {
                 lootableObject.RealizarLoot();
                 Destroy(gameObject);
+                Instantiate(deadEnemy, transform.position, transform.rotation);
                 //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
             }
         }
@@ -99,6 +104,7 @@ public class EnemigoCombate : MonoBehaviour
                 {
                     lootableObject.RealizarLoot();
                     Destroy(gameObject);
+                    Instantiate(deadEnemy, transform.position, transform.rotation);
                     //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
                 }
             }

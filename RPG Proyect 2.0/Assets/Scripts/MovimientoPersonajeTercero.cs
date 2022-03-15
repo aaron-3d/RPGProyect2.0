@@ -75,6 +75,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         else if (arma == espadaLegendaria)
         {
             espadaPocoComun.SetActive(false);
+            espadaComun.SetActive(false);
             espadaLegendaria.SetActive(true);
             healthDamage.conArma = true;
         }

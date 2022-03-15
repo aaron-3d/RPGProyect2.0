@@ -70,7 +70,7 @@ public class PowerUps : MonoBehaviour
             }
             else if (gameObject.tag == "PowerUpSpeed")
             {            
-                    other.GetComponent<CamaraTercera>().AddExtraSpeed(0.6f);
+                    other.GetComponent<CamaraTercera>().AddExtraSpeed(0.06f);
                     Debug.Log("Velocidad aumentada");
                     StartCoroutine(ShowMessage("¡Velocidad aumentada!", 2));
                     gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -81,6 +81,7 @@ public class PowerUps : MonoBehaviour
             }
             else if (gameObject.tag == "PowerUpDamage")
             {
+                EnemigoCombate.dañoRecibidoPuño += 3;
                 EnemigoCombate.dañoRecibido += 5;
                 EnemigoCombate.dañoRecibidoPC += 7;
                 EnemigoCombate.dañoRecibidoLeg += 10;
@@ -107,6 +108,12 @@ public class PowerUps : MonoBehaviour
             }
             else if (gameObject.tag == "PiedraPowerUp")
             {
+                other.GetComponent<CamaraTercera>().ReduceSpeed(0.25f);
+                EnemigoCombate.dañoRecibidoPuño += 150;
+                EnemigoCombate.dañoRecibido += 15;
+                EnemigoCombate.dañoRecibidoPC += 17;
+                EnemigoCombate.dañoRecibidoLeg += 25;
+
                 StartCoroutine(ShowMessage("¿?", 2));
                 StartCoroutine(Destroy(2));
                 gameObject.GetComponent<BoxCollider>().enabled = false;

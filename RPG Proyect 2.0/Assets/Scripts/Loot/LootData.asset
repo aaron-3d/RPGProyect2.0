@@ -21,9 +21,3 @@ MonoBehaviour:
     reward: {fileID: 9084056696898617920, guid: ca475c9f376e31d419643f1887526240, type: 3}
   - rareza: 10
     reward: {fileID: 254362518251784433, guid: a800aee670463a64f9e862225d20fae6, type: 3}
-  - rareza: 5
-    reward: {fileID: 7707019543936847511, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
-  - rareza: 3
-    reward: {fileID: 7182711284408906372, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
-  - rareza: 1
-    reward: {fileID: 306348737618246480, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
