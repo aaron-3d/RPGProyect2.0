@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class MovimientoPersonajeTercero : MonoBehaviour
 {
+    public ParticleSystem dust;
+    public ParticleSystem jumpDust;
+
+
     private Animator _animator;
     private CamaraTercera _movement;
     
@@ -18,6 +22,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     public int cantidadSaltos = 1;
 
     public HealthDamage healthDamage;
+    public PowerUps powerUps;
 
     public GameObject canvasInventario;
 
@@ -26,6 +31,10 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     public float magnitude = 0.25f;
     public float currentSpeed;
     public GameObject arma;
+    public GameObject espadaComun;
+    public GameObject espadaPocoComun;
+    public GameObject espadaLegendaria;
+
 
 
     public void Start()
@@ -52,7 +61,25 @@ public class MovimientoPersonajeTercero : MonoBehaviour
             canvasInventario.SetActive(!canvasInventario.activeInHierarchy);
         }
 
-        
+        if(arma == espadaComun)
+        {
+            espadaComun.SetActive(true);
+            healthDamage.conArma = true;
+        }
+        else if (arma == espadaPocoComun)
+        {
+            espadaComun.SetActive(false);
+            espadaPocoComun.SetActive(true);
+            healthDamage.conArma = true;
+        }
+        else if (arma == espadaLegendaria)
+        {
+            espadaPocoComun.SetActive(false);
+            espadaComun.SetActive(false);
+            espadaLegendaria.SetActive(true);
+            healthDamage.conArma = true;
+        }
+
         Vector3 worldDeltaPosition = _movement.nextPosition- transform.position;
         
 
@@ -76,6 +103,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         if(_movement._move.magnitude >= 0.01f)
         {
             _animator.SetBool("Semueve", true);
+            CreateDust();
 
         }
         else
@@ -92,6 +120,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
                 _animator.SetBool("Salta", true);
                 print("Se pone true");
                 usedJumps += 1;
+                CreateJumpDust();
             }
 
             else if (availableJumps > usedJumps)
@@ -100,6 +129,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
                 //_animator.SetBool("Salta", true);
                 print("Se pone true");
                 usedJumps += 1;
+                
             }
 
         }
@@ -180,5 +210,25 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     IEnumerator WaitForJump(float delay)
     {
         yield return new WaitForSeconds(delay);
+    }
+
+    public void CreateDust()
+    {
+        dust.Play();
+    }
+
+    public void CreateJumpDust()
+    {
+        jumpDust.Play();
+    }
+
+    public void OcultarArma()
+    {
+        arma.SetActive(false);
+    }
+
+    public void MostrarArma()
+    {
+        arma.SetActive(true);
     }
 }
