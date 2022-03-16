@@ -11,7 +11,7 @@ public class PowerUps : MonoBehaviour
     private Animator anim;
     public AudioClip powerUpPopSound;
     public float volume;
-    private AudioSource audio;
+    private AudioSource audio;    
     public TextMeshProUGUI textoPowerUpVida;
     public static GameObject textoPowerUpVidaGO;
 
@@ -29,6 +29,7 @@ public class PowerUps : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+        
     }
 
 

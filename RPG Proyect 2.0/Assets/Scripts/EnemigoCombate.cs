@@ -16,6 +16,8 @@ public class EnemigoCombate : MonoBehaviour
     public Animator animacionTexto;
 
     public GameObject deadEnemy;
+
+    //public EnemySpawner enemySpawner;
     //public bool invencible = false;
     
 
@@ -54,6 +56,7 @@ public class EnemigoCombate : MonoBehaviour
                     lootableObject.RealizarLoot();
                     Destroy(gameObject);
                     Instantiate(deadEnemy, transform.position, transform.rotation);
+                    //enemySpawner.SpawnEnemy();
                     //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
                 }
             }
@@ -70,6 +73,7 @@ public class EnemigoCombate : MonoBehaviour
                 lootableObject.RealizarLoot();
                 Destroy(gameObject);
                 Instantiate(deadEnemy, transform.position, transform.rotation);
+                //enemySpawner.SpawnEnemy();
                 //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
             }
         }
@@ -85,6 +89,7 @@ public class EnemigoCombate : MonoBehaviour
                 lootableObject.RealizarLoot();
                 Destroy(gameObject);
                 Instantiate(deadEnemy, transform.position, transform.rotation);
+                //enemySpawner.SpawnEnemy();
                 //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
             }
         }
@@ -105,6 +110,7 @@ public class EnemigoCombate : MonoBehaviour
                     lootableObject.RealizarLoot();
                     Destroy(gameObject);
                     Instantiate(deadEnemy, transform.position, transform.rotation);
+                    //enemySpawner.SpawnEnemy();
                     //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
                 }
             }
