@@ -24,11 +24,8 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     public HealthDamage healthDamage;
     public PowerUps powerUps;
 
-<<<<<<< Updated upstream
     public GameObject canvasInventario;
-=======
-    public GameObject inventarioCanvas;
->>>>>>> Stashed changes
+
 
     private Vector2 smoothDeltaPosition = Vector2.zero;
     public Vector2 velocity = Vector2.zero;
@@ -59,7 +56,7 @@ public class MovimientoPersonajeTercero : MonoBehaviour
 
     public void Update()
     {
-<<<<<<< Updated upstream
+
 
         if(Input.GetKeyDown(KeyCode.I))
         {
@@ -84,14 +81,6 @@ public class MovimientoPersonajeTercero : MonoBehaviour
             espadaLegendaria.SetActive(true);
             healthDamage.conArma = true;
         }
-=======
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            inventarioCanvas.SetActive(!inventarioCanvas.activeInHierarchy);
-        }
-
-
->>>>>>> Stashed changes
 
         Vector3 worldDeltaPosition = _movement.nextPosition- transform.position;
         
