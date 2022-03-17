@@ -9,7 +9,7 @@ public class LootableObject : MonoBehaviour
     [SerializeField]
     private int factorAdicional = 1;
     [SerializeField]
-    private int cantDropMax = 1;
+    private int dropItems = 1;
     [Range(0,100)]
     [SerializeField]
     private int posibilidadDeDrop;
@@ -24,7 +24,7 @@ public class LootableObject : MonoBehaviour
 
     public void RealizarLoot()
     {
-        LootSystem.Instance.SpawnLoot(spawnPoint, factorAdicional, cantDropMax, posibilidadDeDrop);
+        LootSystem.Instance.SpawnLoot(spawnPoint, factorAdicional, dropItems, posibilidadDeDrop);
     }
 
 }

@@ -36,7 +36,10 @@ public class Inventario : MonoBehaviour
 
     public Transform contenido;
     public Item item;
+    public List<ItemSuelto> itemsSueltos = new List<ItemSuelto>();
     public List<ObjetoInvId> inventarioo = new List<ObjetoInvId>();
+
+    public Transform ItemSueltoRespawn;
     void Start()
     {
         InventoryUpdate();
@@ -46,9 +49,10 @@ public class Inventario : MonoBehaviour
 
         Descripcion = GameObject.Find("Descripcion");
 
-        //CE.gameObject.SetActive(false);
+        CE.gameObject.SetActive(false);
 
         canvas = transform.parent.transform;
+
     }
 
     // Update is called once per frame
@@ -196,6 +200,21 @@ public class Inventario : MonoBehaviour
             if (inventarioo[i].id == id)
             {
                 inventarioo[i] = new ObjetoInvId(inventarioo[i].id, inventarioo[i].cantidad - cantidad);
+
+                for(int n = 0; n < itemsSueltos.Count; n++)
+                {
+                    if(itemsSueltos[n].ID == id)
+                    {
+                        itemsSueltos[n].gameObject.SetActive(true);
+                        itemsSueltos[n].transform.position = ItemSueltoRespawn.position;
+                        itemsSueltos[n].transform.SetParent(null);
+                        itemsSueltos.Remove(itemsSueltos[n]);
+                    }
+                }
+
+
+
+
                 if (inventarioo[i].cantidad <= 0)
                 {
                     inventarioo.Remove(inventarioo[i]);
@@ -234,7 +253,9 @@ public class Inventario : MonoBehaviour
         {
             for (int i = pool.Count; i < inventarioo.Count; i++)
             {
+                
                 Item it = Instantiate(item, contenido.GetChild(i)); // aqui el getchild lo utilizo para crear el item dentro del slot
+
                 pool.Add(it);
 
                 if (contenido.GetChild(0).childCount >= 2)
@@ -262,6 +283,8 @@ public class Inventario : MonoBehaviour
             }
         }
     }
+
+   
     void PocionSalud()
     {
         healthDamage.SumarVida(20);

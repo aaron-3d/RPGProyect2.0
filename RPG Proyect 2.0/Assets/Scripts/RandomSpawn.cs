@@ -37,7 +37,7 @@ public class RandomSpawn : MonoBehaviour
     {
         Min = new Vector3(30, 35, 498); //Random value.
         Max = new Vector3(346, 35, 739); //Another ramdon value, just for the example.          
-        Debug.Log("Posición:" + _randomPosition);
+        
     }
 
     private void InstantiateRandomObjects()

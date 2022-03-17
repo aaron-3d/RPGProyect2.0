@@ -14,7 +14,7 @@ public class ItemSuelto : MonoBehaviour
             //ItemSuelto itSuelto = Inv.itemsSueltos.Find(x => x.ID == this.ID);
             Inv.AgregarItem(ID, cantidad);
 
-            /*if(itSuelto != null && Inv.item.DB.baseDatos[itSuelto.ID].acumulable)
+            /*if (itSuelto != null && Inv.item.DB.baseDatos[itSuelto.ID].acumulable)
             {
                 itSuelto.cantidad += this.cantidad;
             }
@@ -22,23 +22,28 @@ public class ItemSuelto : MonoBehaviour
             {
                 Inv.itemsSueltos.Add(this);
             }
-            if(!this.gameObject.name.Contains("(Clone)") || itSuelto == null)
+            if (!this.gameObject.name.Contains("(Clone)") || itSuelto == null)
             {
                 transform.SetParent(other.transform);
             }
             else
             {
-                Inv.copiasItemsSueltos.Remove(this);
+                //Inv.copiasItemsSueltos.Remove(this);
                 Destroy(this.gameObject);
-            }*/
+            }
 
-            /*var jug = other.GetComponent<Movimiento>();
-            jug.invLocal.Add(this.gameObject);
-            jug.questTrack.VerificarItem(ID);*/
+            var jug = other.GetComponent<MovimientoJugador>();
+            
 
-            gameObject.SetActive(false);
 
+
+            //transform.SetParent(other.transform);
+            //Inv.itemsSueltos.Add(this);
+
+            //gameObject.SetActive(false);
+            Destroy(this.gameObject);*/
         }
     }
 }
-    
+
+
