@@ -105,7 +105,15 @@ public class HealthDamage : MonoBehaviour
     }
     public void Retry()
     {
-        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        Debug.Log("Deberia recargarse la escena");
+        SceneManager.LoadScene("CopiaEscenaPrincipal");
+        EnemigoCombate.dañoRecibido = 15;
+        EnemigoCombate.dañoRecibidoPC = 25;
+        EnemigoCombate.dañoRecibidoLeg = 50;
+        EnemigoCombate.dañoRecibidoPuño = 10;
+        //Debug.Log("Deberia recargarse el juego");
+        //Scene scene = SceneManager.GetActiveScene();
+        //SceneManager.LoadScene(scene.name);
         //anim.SetBool("Estamuerto", false);
         deathOverlay.SetActive(false);
     }

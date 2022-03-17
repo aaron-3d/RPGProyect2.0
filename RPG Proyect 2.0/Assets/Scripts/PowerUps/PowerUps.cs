@@ -61,7 +61,6 @@ public class PowerUps : MonoBehaviour
             {
                 //other.GetComponent<HealthDamage>().SumarVida(cantidad);
                 other.GetComponent<HealthDamage>().vidaP += 15;
-
                 StartCoroutine(ShowMessage("+15 HP", 2));
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 anim.Play("PowerUpShrink");
@@ -71,7 +70,7 @@ public class PowerUps : MonoBehaviour
             }
             else if (gameObject.tag == "PowerUpSpeed")
             {            
-                    other.GetComponent<CamaraTercera>().AddExtraSpeed(0.06f);
+                    other.GetComponent<CamaraTercera>().AddExtraSpeed(0.03f);
                     Debug.Log("Velocidad aumentada");
                     StartCoroutine(ShowMessage("¡Velocidad aumentada!", 2));
                     gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -86,8 +85,6 @@ public class PowerUps : MonoBehaviour
                 EnemigoCombate.dañoRecibido += 5;
                 EnemigoCombate.dañoRecibidoPC += 7;
                 EnemigoCombate.dañoRecibidoLeg += 10;
-                //enemigoCombate.dañoRecibido += 10;
-                //enemigoCombate.dañoRecibidoPuño += 5;
                 Debug.Log("Daño aumentado(+x)");
                 StartCoroutine(ShowMessage("Daño aumentado", 2));
                 gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -98,30 +95,28 @@ public class PowerUps : MonoBehaviour
             }
             else if (gameObject.tag == "PowerUpJump")
             {                
-                    other.GetComponent<MovimientoPersonajeTercero>().AddExtraJump(1);
-                    Debug.Log("Ahora puedes dar otro salto en el aire");
-                    StartCoroutine(ShowMessage("Ahora puedes dar otro salto en el aire", 2));
-                    gameObject.GetComponent<BoxCollider>().enabled = false;
-                    anim.Play("PowerUpShrink4");
-                    audio.PlayOneShot(powerUpPopSound, volume);
-                    StartCoroutine(PlaySound(1));
-                    StartCoroutine(Destroy(2));              
+                other.GetComponent<MovimientoPersonajeTercero>().AddExtraJump(1);
+                Debug.Log("Ahora puedes dar otro salto en el aire");
+                StartCoroutine(ShowMessage("Ahora puedes dar otro salto en el aire", 2));
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+                anim.Play("PowerUpShrink4");
+                audio.PlayOneShot(powerUpPopSound, volume);
+                StartCoroutine(PlaySound(1));
+                StartCoroutine(Destroy(2));              
             }
             else if (gameObject.tag == "PiedraPowerUp")
             {
-                other.GetComponent<CamaraTercera>().ReduceSpeed(0.25f);
+                other.GetComponent<CamaraTercera>().ReduceSpeed(0.15f);
                 EnemigoCombate.dañoRecibidoPuño += 150;
                 EnemigoCombate.dañoRecibido += 15;
                 EnemigoCombate.dañoRecibidoPC += 17;
                 EnemigoCombate.dañoRecibidoLeg += 25;
-
-                StartCoroutine(ShowMessage("¿?", 2));
-                StartCoroutine(Destroy(2));
+                StartCoroutine(ShowMessage("¿?", 2));    
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 anim.Play("PowerUpShrink5");
                 audio.PlayOneShot(powerUpPopSound, volume);
                 StartCoroutine(PlaySound(1));
-                
+                StartCoroutine(Destroy(2));
             }
             else if (gameObject.tag == "EspadaComunPowerUp" && (movimientoPersonajeTercero.arma == null))
             {
