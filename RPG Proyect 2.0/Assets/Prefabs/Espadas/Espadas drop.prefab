@@ -1,0 +1,306 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1622518072112294063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622518072112294056}
+  m_Layer: 0
+  m_Name: Espadas drop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1622518072112294056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622518072112294063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8591551196089536366}
+  - {fileID: 7382697449971871841}
+  - {fileID: 1841930148895895517}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1622518073751165763
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1622518072112294056}
+    m_Modifications:
+    - target: {fileID: 497450853, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: espadaComun
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 497450853, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: espadaPocoComun
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 497450853, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: espadaLegendaria
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 497450853, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: movimientoPersonajeTercero
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 813172143, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: spawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 813172143, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: spawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 813172143, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: spawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 180.33015
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 36.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 622.5997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707019543936847511, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+      propertyPath: m_Name
+      value: Espada comun Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+--- !u!4 &8591551196089536366 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7043354791323964461, guid: bd4d069f5b87b8d449499fc10619fd3f, type: 3}
+  m_PrefabInstance: {fileID: 1622518073751165763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1622518073886641719
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1622518072112294056}
+    m_Modifications:
+    - target: {fileID: 30614477, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: spawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 30614477, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: spawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 30614477, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: spawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284503941, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: espadaComun
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284503941, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: espadaPocoComun
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284503941, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: espadaLegendaria
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284503941, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: movimientoPersonajeTercero
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 306348737618246480, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_Name
+      value: Espada Legendaria Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 185.06104
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 33.83022
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 622.17487
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+--- !u!4 &1841930148895895517 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1084116409202483690, guid: 543e63ca61a743f4093c62a29d57aba3, type: 3}
+  m_PrefabInstance: {fileID: 1622518073886641719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1622518073938247423
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1622518072112294056}
+    m_Modifications:
+    - target: {fileID: 233324259, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: spawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 233324259, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: spawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 233324259, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: spawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766048963, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: espadaComun
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766048963, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: espadaPocoComun
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766048963, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: espadaLegendaria
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766048963, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: movimientoPersonajeTercero
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182711284408906372, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_Name
+      value: Espada poco comun 1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 183.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 623.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+--- !u!4 &7382697449971871841 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8138228416114331294, guid: d4caf963b1d86314a9a677163fafb4c0, type: 3}
+  m_PrefabInstance: {fileID: 1622518073938247423}
+  m_PrefabAsset: {fileID: 0}

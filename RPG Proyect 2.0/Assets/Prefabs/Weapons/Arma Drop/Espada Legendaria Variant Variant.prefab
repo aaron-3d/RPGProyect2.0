@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3488720318424285479, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_Name
-      value: Espada Legendaria Variant
+      value: Espada Legendaria Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3488720318424285479, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_TagString
@@ -25,43 +25,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4260893473050090397, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 356.05
+      value: 185.06104
       objectReference: {fileID: 0}
     - target: {fileID: 4260893473050090397, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.13
+      value: 33.83022
       objectReference: {fileID: 0}
     - target: {fileID: 4260893473050090397, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 689.5277
+      value: 622.17487
       objectReference: {fileID: 0}
     - target: {fileID: 4260893473050090397, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.4911975
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4260893473050090397, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5086502
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4260893473050090397, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5086502
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4260893473050090397, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.4911975
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4260893473050090397, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4260893473050090397, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 268
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260893473050090397, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c210724fa34369b41ae8dccfdabc0746, type: 3}
@@ -92,3 +92,19 @@ MonoBehaviour:
   espadaLegendaria: {fileID: 0}
   enemigoCombate: {fileID: 0}
   movimientoPersonajeTercero: {fileID: 0}
+--- !u!114 &30614477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306348737618246480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbce28b3c5a655641b1799d5fe331cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

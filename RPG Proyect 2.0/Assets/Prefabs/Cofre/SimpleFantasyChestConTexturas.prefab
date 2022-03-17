@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 877860907424579807}
   - component: {fileID: 1409566930210886012}
   - component: {fileID: 1705705287867552227}
+  - component: {fileID: 919132149287877469}
   m_Layer: 0
   m_Name: SimpleFantasyChestConTexturas
   m_TagString: Untagged
@@ -79,7 +80,7 @@ Animator:
   m_GameObject: {fileID: 6934188941017229075}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 55de588ea6d3e9f46bda8e2ee50967c4, type: 2}
+  m_Controller: {fileID: 9100000, guid: eb0bdaaa58980ef46ab127f6dfad8e40, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129,11 +130,23 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6934188941017229075}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.49119, z: 3.1253424}
-  m_Center: {x: -0, y: 1.245595, z: -0.16993761}
+  m_Size: {x: 4.828693, y: 3.49119, z: 3.1253424}
+  m_Center: {x: -0, y: 1.69, z: 0.01}
+--- !u!114 &919132149287877469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6934188941017229075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4344357df25bdf44eb477442e6cfcce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8459058691296969287
 GameObject:
   m_ObjectHideFlags: 0

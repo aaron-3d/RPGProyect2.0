@@ -17,47 +17,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 363.51
+      value: 183.07
       objectReference: {fileID: 0}
     - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.46
+      value: 35.17
       objectReference: {fileID: 0}
     - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 689.11066
+      value: 623.68
       objectReference: {fileID: 0}
     - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49732617
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.56823957
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.45269102
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.4741744
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321309978807403085, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3704251769111412311, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_Name
-      value: Espada poco comun 1
+      value: Espada poco comun 1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3704251769111412311, guid: 1cadb2ba3ac094b44887b3ca7c2dc307, type: 3}
       propertyPath: m_TagString
@@ -93,3 +93,19 @@ MonoBehaviour:
   espadaLegendaria: {fileID: 0}
   enemigoCombate: {fileID: 0}
   movimientoPersonajeTercero: {fileID: 0}
+--- !u!114 &233324259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182711284408906372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbce28b3c5a655641b1799d5fe331cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

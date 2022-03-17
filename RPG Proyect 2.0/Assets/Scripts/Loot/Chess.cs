@@ -13,8 +13,19 @@ public class Chess : MonoBehaviour
         lb = GetComponent<LootableObject>();
     }
 
-    /*public IEnumerator Opening()
+    public IEnumerator Opening()
     {
-        //anim.SetBool()
-    }*/
+        anim.SetBool("Abierto", true);
+        yield return new WaitForSeconds(1.5f);
+        lb.RealizarLoot();
+        looteable = false;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && looteable == true)
+        {
+            looteable = false;
+            StartCoroutine(Opening());
+        }
+    }
 }

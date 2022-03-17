@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 7906538584869411294}
-  factorAdicional: 2
+  factorAdicional: 1
   dropItems: 1
   posibilidadDeDrop: 100
 --- !u!1 &8416988445412363357

@@ -7,6 +7,14 @@ public class ItemSuelto : MonoBehaviour
     public int cantidad;
     public int ID;
     public Inventario Inv;
+
+    private void update()
+    {
+        if (Inv == null)
+        {
+            Inv = FindObjectOfType<Inventario>();
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

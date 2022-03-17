@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5019319100056737573, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_Name
-      value: Espada comun
+      value: Espada comun Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5019319100056737573, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_TagString
@@ -49,43 +49,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 362.63568
+      value: 180.33015
       objectReference: {fileID: 0}
     - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.93
+      value: 36.29
       objectReference: {fileID: 0}
     - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 684.064
+      value: 622.5997
       objectReference: {fileID: 0}
     - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49732617
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.56823957
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.45269102
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.4741744
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684638446220955039, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1151857819249493178, guid: 45b288cafd2901e44a6f5b2b9ea42c65, type: 3}
@@ -117,3 +117,19 @@ MonoBehaviour:
   espadaLegendaria: {fileID: 0}
   enemigoCombate: {fileID: 0}
   movimientoPersonajeTercero: {fileID: 0}
+--- !u!114 &813172143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7707019543936847511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbce28b3c5a655641b1799d5fe331cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

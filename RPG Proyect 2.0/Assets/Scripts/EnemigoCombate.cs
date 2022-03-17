@@ -70,9 +70,10 @@ public class EnemigoCombate : MonoBehaviour
             StartCoroutine(HideText());
             if (vidaEnemigo <= 0)
             {
+                Instantiate(deadEnemy, transform.position, transform.rotation);
                 lootableObject.RealizarLoot();
                 Destroy(gameObject);
-                Instantiate(deadEnemy, transform.position, transform.rotation);
+                
                 //enemySpawner.SpawnEnemy();
                 //Añadir linea para animación del enemigo cuando la haya con un Coroutine para destruirse
             }
