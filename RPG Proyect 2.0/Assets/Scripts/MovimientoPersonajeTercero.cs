@@ -36,11 +36,13 @@ public class MovimientoPersonajeTercero : MonoBehaviour
     public GameObject espadaPocoComun;
     public GameObject espadaLegendaria;
 
-
+    public bool canMove = true;
 
     public void Start()
     {
         jump = new Vector3(0.0f, 3.2f, 0.0f);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnEnable()
@@ -56,14 +58,20 @@ public class MovimientoPersonajeTercero : MonoBehaviour
 
     public void Update()
     {
-
-
         if(Input.GetKeyDown(KeyCode.I))
         {
             canvasInventario.SetActive(!canvasInventario.activeInHierarchy);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        
+        if (canvasInventario.activeInHierarchy == false)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
-        if(arma == espadaComun)
+            if (arma == espadaComun)
         {
             espadaComun.SetActive(true);
             healthDamage.conArma = true;
@@ -81,23 +89,23 @@ public class MovimientoPersonajeTercero : MonoBehaviour
             espadaLegendaria.SetActive(true);
             healthDamage.conArma = true;
         }
-
-        Vector3 worldDeltaPosition = _movement.nextPosition- transform.position;
         
+            Vector3 worldDeltaPosition = _movement.nextPosition - transform.position;
 
-        //Map to local space
-        float dX = Vector3.Dot(transform.right, worldDeltaPosition);
-        float dY = Vector3.Dot(transform.forward, worldDeltaPosition);
-        Vector2 deltaPosition = new Vector2(dX, dY);
 
-        float smooth = Mathf.Min(1.0f, Time.deltaTime / 0.15f);
-        smoothDeltaPosition = Vector2.Lerp(smoothDeltaPosition, deltaPosition, smooth);
+            //Map to local space
+            float dX = Vector3.Dot(transform.right, worldDeltaPosition);
+            float dY = Vector3.Dot(transform.forward, worldDeltaPosition);
+            Vector2 deltaPosition = new Vector2(dX, dY);
 
-        if (Time.deltaTime > 1e-5f)
-        {
-            velocity = smoothDeltaPosition / Time.deltaTime;
-            
-        }
+            float smooth = Mathf.Min(1.0f, Time.deltaTime / 0.15f);
+            smoothDeltaPosition = Vector2.Lerp(smoothDeltaPosition, deltaPosition, smooth);
+
+            if (Time.deltaTime > 1e-5f)
+            {
+                velocity = smoothDeltaPosition / Time.deltaTime;
+
+            }
         
         //Debug.Log("Speed " + direction.magnitude);
         _animator.SetFloat("Speed", _movement._move.magnitude);

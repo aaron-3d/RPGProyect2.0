@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: LootData
   m_EditorClassIdentifier: 
   prob:
-  - rareza: 10000
-    reward: {fileID: 919132149155446097, guid: 2d73d05a853c08144a927ca6b9925a62, type: 3}
+  - rareza: 40
+    reward: {fileID: 3009602861704893358, guid: 48cd8f243652df94d9f2a12ebae2823b, type: 3}
+  - rareza: 40
+    reward: {fileID: 4021842588418337063, guid: 16f82e3df568ede4db8038ce684c9202, type: 3}
+  - rareza: 20
+    reward: {fileID: 7353851455044510809, guid: 736c5c83b2e41f746b497b487493244d, type: 3}
   - rareza: 20
     reward: {fileID: 254362518251784433, guid: a800aee670463a64f9e862225d20fae6, type: 3}
   - rareza: 20
     reward: {fileID: 2271732803380217105, guid: c86b336776e09664d8c2840e2355c94d, type: 3}
   - rareza: 20
     reward: {fileID: 2403337809896524913, guid: c14cf2f8fd47a994ca7559bb307d536a, type: 3}
-  - rareza: 1
-    reward: {fileID: 7353851455044510809, guid: 736c5c83b2e41f746b497b487493244d, type: 3}

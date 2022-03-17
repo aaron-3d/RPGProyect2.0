@@ -136,4 +136,9 @@ public class HealthDamage : MonoBehaviour
         yield return new WaitForSeconds(tiempoFrenado);
         GetComponent<CamaraTercera>().speed = velocidadMaxima;
     }
+    public void Curar(int cantidad)
+    {
+        vidaP = vidaP + cantidad >= maxHealth ? maxHealth : vidaP + cantidad;
+        healthBarSlider.SetMaxHealth(vidaP);
+    }
 }

@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1409566930210886012}
   - component: {fileID: 1705705287867552227}
   - component: {fileID: 919132149287877469}
+  - component: {fileID: 4457054123716717048}
   m_Layer: 0
   m_Name: SimpleFantasyChestConTexturas
   m_TagString: Untagged
@@ -130,11 +131,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6934188941017229075}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4.828693, y: 3.49119, z: 3.1253424}
-  m_Center: {x: -0, y: 1.69, z: 0.01}
+  m_Center: {x: -0, y: 1.69, z: 0}
 --- !u!114 &919132149287877469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +148,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4344357df25bdf44eb477442e6cfcce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4457054123716717048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6934188941017229075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 6, z: 5}
+  m_Center: {x: 0, y: 1.65, z: 0}
 --- !u!1 &8459058691296969287
 GameObject:
   m_ObjectHideFlags: 0

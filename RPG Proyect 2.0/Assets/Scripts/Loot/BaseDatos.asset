@@ -15,92 +15,15 @@ MonoBehaviour:
   baseDatos:
   - nombre: "Poci\xF3n De Vida"
     ID: 0
+    icono: {fileID: 21300000, guid: 5b88ee6ec87bb4b48bbfeeb26f806ce0, type: 3}
+    tipo: 0
+    acumulable: 1
+    descripcion: "+10 de Vida M\xE1xima"
+    Void: PocionSalud
+  - nombre: Curacion
+    ID: 1
     icono: {fileID: 21300000, guid: e52ea25af699fd445b7046374f81a5b9, type: 3}
     tipo: 0
     acumulable: 1
-    descripcion: +20 de Vida
-    Void: PocionSalud
-  - nombre: Espada
-    ID: 1
-    icono: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}
-    tipo: 1
-    acumulable: 0
-    descripcion: "+10 de Da\xF1o"
-    Void: Espada
-  - nombre: Casco
-    ID: 2
-    icono: {fileID: 21300000, guid: fd6e4fc32c78509458fc45ea4a478ba8, type: 3}
-    tipo: 1
-    acumulable: 0
-    descripcion: 
-    Void: Casco
-  - nombre: Pechera
-    ID: 3
-    icono: {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
-    tipo: 1
-    acumulable: 0
-    descripcion: 
-    Void: Pechera
-  - nombre: Pantalones
-    ID: 4
-    icono: {fileID: 21300000, guid: b8fb302c5768e334ca82005f50e58121, type: 3}
-    tipo: 1
-    acumulable: 0
-    descripcion: 
-    Void: Pantalones
-  - nombre: Botas
-    ID: 4
-    icono: {fileID: 21300000, guid: e420c5bc93cb2604695a893500c897e3, type: 3}
-    tipo: 1
-    acumulable: 0
-    descripcion: 
-    Void: Botas
-  - nombre: Hacha
-    ID: 5
-    icono: {fileID: 21300000, guid: 172774604c1bee84185a69041576525b, type: 3}
-    tipo: 1
-    acumulable: 0
-    descripcion: 
-    Void: Hacha
-  - nombre: Daga
-    ID: 6
-    icono: {fileID: 21300000, guid: 45cfe68fb47a8514f96477d0fb432286, type: 3}
-    tipo: 1
-    acumulable: 0
-    descripcion: 
-    Void: Daga
-  - nombre: Velocidad de movimiento
-    ID: 7
-    icono: {fileID: 21300000, guid: 4db017495c69e8140a56a0e2b669e3f8, type: 3}
-    tipo: 2
-    acumulable: 0
-    descripcion: 
-    Void: PUVelocidadMovimiento
-  - nombre: Velocidad de ataque
-    ID: 8
-    icono: {fileID: 21300000, guid: 537061d6ab4addf439f918145d65123e, type: 3}
-    tipo: 2
-    acumulable: 0
-    descripcion: 
-    Void: PUVelocidadAtaque
-  - nombre: PowerUp salto
-    ID: 9
-    icono: {fileID: 21300000, guid: 24726326f0d24dc41875ec34f94e95b2, type: 3}
-    tipo: 2
-    acumulable: 0
-    descripcion: 
-    Void: PUSalto
-  - nombre: PowerUp Vida
-    ID: 10
-    icono: {fileID: 21300000, guid: 45cfe68fb47a8514f96477d0fb432286, type: 3}
-    tipo: 2
-    acumulable: 0
-    descripcion: 
-    Void: PUVida
-  - nombre: "PowerUp Da\xF1o"
-    ID: 11
-    icono: {fileID: 21300000, guid: e828181400a5c9e4a8a1be3357344d23, type: 3}
-    tipo: 2
-    acumulable: 0
-    descripcion: 
-    Void: "PUDa\xF1o"
+    descripcion: Te cura +20 de Vida
+    Void: Curacion

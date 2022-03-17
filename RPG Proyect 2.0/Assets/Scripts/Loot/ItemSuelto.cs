@@ -8,12 +8,9 @@ public class ItemSuelto : MonoBehaviour
     public int ID;
     public Inventario Inv;
 
-    private void update()
+    public void Start()
     {
-        if (Inv == null)
-        {
-            Inv = FindObjectOfType<Inventario>();
-        }
+        Inv = InstanceManager.Instance.Inv1;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -21,7 +18,8 @@ public class ItemSuelto : MonoBehaviour
         {
             //ItemSuelto itSuelto = Inv.itemsSueltos.Find(x => x.ID == this.ID);
             Inv.AgregarItem(ID, cantidad);
-
+            
+            Destroy(this.gameObject);
             /*if (itSuelto != null && Inv.item.DB.baseDatos[itSuelto.ID].acumulable)
             {
                 itSuelto.cantidad += this.cantidad;

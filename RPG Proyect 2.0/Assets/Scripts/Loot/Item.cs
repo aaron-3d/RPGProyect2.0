@@ -22,9 +22,9 @@ public class Item : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
     {
         acumulable = DB.baseDatos[ID].acumulable;
         Boton = GetComponent<Button>();
-        _descripcion = Inventario.Descripcion;
-        Nombre_ = _descripcion.transform.GetChild(0).GetComponent<Text>();
-        Dato_ = _descripcion.transform.GetChild(1).GetComponent<Text>();
+        //_descripcion = Inventario.Descripcion;
+        //Nombre_ = _descripcion.transform.GetChild(0).GetComponent<Text>();
+        //Dato_ = _descripcion.transform.GetChild(1).GetComponent<Text>();
 
         _descripcion.SetActive(false);
         if (!_descripcion.GetComponent<Image>().enabled) //en el caso de que el componente image no este activado, lo voy a activar.
@@ -54,10 +54,14 @@ public class Item : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _descripcion.SetActive(true);
-        Nombre_.text = DB.baseDatos[ID].nombre;
-        Dato_.text = DB.baseDatos[ID].descripcion;
-        _descripcion.transform.position = transform.position + offset;
+        if (_descripcion.activeInHierarchy == false)
+        {
+
+            _descripcion.SetActive(true);
+            Nombre_.text = DB.baseDatos[ID].nombre;
+            Dato_.text = DB.baseDatos[ID].descripcion;
+            _descripcion.transform.position = transform.position + offset;
+        }
     }
     public void OnPointerExit(PointerEventData eventData)
     {

@@ -58,11 +58,11 @@ public class Inventario : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Arrastrar();
+        //Arrastrar();
     }
-    void Arrastrar() 
+    void Arrastrar()
     {
-        if (Input.GetMouseButtonDown(1))
+        /*if (Input.GetMouseButtonDown(1))
         {
             pointerData.position = Input.mousePosition;
             graphRay.Raycast(pointerData, raycastResults);
@@ -76,8 +76,8 @@ public class Inventario : MonoBehaviour
                     OSID = objetoSeleccionado.GetComponent<Item>().ID;
 
                     exParent = objetoSeleccionado.transform.parent.transform; //para guardar la posicion principal del item al pulsarlo
-                    exParent.GetComponent<Image>().fillCenter = false; //borrar el fillCenter de las casillas donde no haya nada
-                    objetoSeleccionado.transform.SetParent(canvas); //desenparentar el item del slit
+                    //exParent.GetComponent<Image>().fillCenter = false; //borrar el fillCenter de las casillas donde no haya nada
+                    objetoSeleccionado.transform.SetParent(canvas); //desenparentar el item del slot
                 }
             }
         }
@@ -137,31 +137,34 @@ public class Inventario : MonoBehaviour
                                     //objetoSeleccionado.transform.localPosition = Vector2.zero;
                                 }
                             }*/
-                        }
-                        /*else
-                        {
-                            objetoSeleccionado.transform.SetParent(exParent.transform);
-                            //objetoSeleccionado.transform.localPosition = Vector2.zero;
-                        }
-                        if (resultado.gameObject.CompareTag("Eliminar"))
-                        {
-                            if(objetoSeleccionado.gameObject.GetComponent<Item>().cantidad >= 2)
-                            {
-                                CE.gameObject.SetActive(true);
-                            }
-                            else
-                            {
-                                CE.gameObject.SetActive(false);
-                                EliminarItem(objetoSeleccionado.gameObject.GetComponent<Item>().ID, objetoSeleccionado.gameObject.GetComponent<Item>().cantidad);
-                            }
-                        }*/
-                    }
-                }
-                objetoSeleccionado.transform.localPosition = Vector3.zero;
-                objetoSeleccionado = null;
+        //}
+        /*else
+        {
+            objetoSeleccionado.transform.SetParent(exParent.transform);
+            //objetoSeleccionado.transform.localPosition = Vector2.zero;
+        }
+        if (resultado.gameObject.CompareTag("Eliminar"))
+        {
+            if(objetoSeleccionado.gameObject.GetComponent<Item>().cantidad >= 2)
+            {
+                CE.gameObject.SetActive(true);
+            }
+            else
+            {
+                CE.gameObject.SetActive(false);
+                EliminarItem(objetoSeleccionado.gameObject.GetComponent<Item>().ID, objetoSeleccionado.gameObject.GetComponent<Item>().cantidad);
             }
         }
-        raycastResults.Clear();
+    }
+}
+objetoSeleccionado.transform.localPosition = Vector3.zero;
+objetoSeleccionado = null;
+}
+}
+if (raycastResults != null)
+{
+raycastResults.Clear();
+}*/
     }
     public Vector2 CanvasScreen(Vector2 screenPos) //Ubicar la camara principal para ver el rango de vision de la camara
     {
@@ -201,9 +204,9 @@ public class Inventario : MonoBehaviour
             {
                 inventarioo[i] = new ObjetoInvId(inventarioo[i].id, inventarioo[i].cantidad - cantidad);
 
-                for(int n = 0; n < itemsSueltos.Count; n++)
+                for (int n = 0; n < itemsSueltos.Count; n++)
                 {
-                    if(itemsSueltos[n].ID == id)
+                    if (itemsSueltos[n].ID == id)
                     {
                         itemsSueltos[n].gameObject.SetActive(true);
                         itemsSueltos[n].transform.position = ItemSueltoRespawn.position;
@@ -253,7 +256,7 @@ public class Inventario : MonoBehaviour
         {
             for (int i = pool.Count; i < inventarioo.Count; i++)
             {
-                
+
                 Item it = Instantiate(item, contenido.GetChild(i)); // aqui el getchild lo utilizo para crear el item dentro del slot
 
                 pool.Add(it);
@@ -284,66 +287,19 @@ public class Inventario : MonoBehaviour
         }
     }
 
-   
+
     void PocionSalud()
     {
-        healthDamage.SumarVida(20);
+        healthDamage.SumarVida(10);
         EliminarItem(0, 1);
     }
-    void Espada()
+    void Curacion()
     {
-
-    }
-
-    void Casco()
-    {
-
-    }
-
-    void Pechera()
-    {
-
-    }
-
-    void Pantalones()
-    {
-
-    }
-
-    void Botas()
-    {
-
-    }
-
-    void Hacha()
-    {
-
-    }
-    void Daga()
-    {
-
-    }
-
-    void PUVelocidadMovimiento()
-    {
-
-    }
-
-    void PUVelocidadAtaque()
-    {
-
-    }
-    void PUSalto()
-    {
-
-    }
-    void PUVida()
-    {
-
-    }
-    void PUDaño()
-    {
-
+        if (healthDamage.vidaP < healthDamage.maxHealth)
+        {
+            healthDamage.Curar(20);
+            EliminarItem(1, 1);
+        }
     }
 
 }
