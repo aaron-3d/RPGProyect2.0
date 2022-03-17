@@ -106,7 +106,6 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         {
             _animator.SetBool("Semueve", true);
             CreateDust();
-
         }
         else
         {

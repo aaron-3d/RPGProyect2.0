@@ -21,6 +21,7 @@ public class PowerUps : MonoBehaviour
 
     public EnemigoCombate enemigoCombate;
     public MovimientoPersonajeTercero movimientoPersonajeTercero;
+    public HealthDamage healthDamage;
 
     //public GameObject player;
     
@@ -111,6 +112,7 @@ public class PowerUps : MonoBehaviour
                 EnemigoCombate.dañoRecibido += 15;
                 EnemigoCombate.dañoRecibidoPC += 17;
                 EnemigoCombate.dañoRecibidoLeg += 25;
+                healthDamage.velocidadMaxima -= 0.15f;
                 StartCoroutine(ShowMessage("¿?", 2));    
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 anim.Play("PowerUpShrink5");
