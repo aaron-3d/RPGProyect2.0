@@ -27,12 +27,15 @@ public class CamaraTercera : MonoBehaviour
 
     public float cantidadSpeed = 0.1f;
 
-    
+    //private new Transform player;
+   // public float rayDistance;
+
 
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         Cursor.lockState = CursorLockMode.Locked;
+       // player = transform.Find("Camera (1)");
     }
 
     public void OnMove(InputValue value)
@@ -95,7 +98,13 @@ public class CamaraTercera : MonoBehaviour
         followTransform.transform.localEulerAngles = angles;
         #endregion
 
+       // Debug.DrawRay(player.position, player.forward * rayDistance, Color.red);
 
+      /*  RaycastHit hit;
+        if (Physics.Raycast(player.position, player.forward, out hit, rayDistance))
+        {
+            Debug.Log(hit.transform.name);
+        }*/
         nextRotation = Quaternion.Lerp(followTransform.transform.rotation, nextRotation, Time.deltaTime * rotationLerp);
 
         if (_move.x == 0 && _move.y == 0)
