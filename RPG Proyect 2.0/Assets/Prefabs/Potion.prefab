@@ -11,10 +11,15 @@ GameObject:
   - component: {fileID: 4404927595014578427}
   - component: {fileID: 1830285281044568068}
   - component: {fileID: 4504318217884888270}
+<<<<<<< Updated upstream
   - component: {fileID: 2149429723860184571}
   - component: {fileID: 2196990146492517761}
   - component: {fileID: 6118302413393317881}
   - component: {fileID: 6076815246850774668}
+=======
+  - component: {fileID: -2025700979853983656}
+  - component: {fileID: 4251385468899841161}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Potion
   m_TagString: Untagged
@@ -143,15 +148,23 @@ MonoBehaviour:
   _descripcion: {fileID: 0}
   Nombre_: {fileID: 0}
   Dato_: {fileID: 0}
+<<<<<<< Updated upstream
   offset: {x: 0, y: 0, z: 0}
   DB: {fileID: 11400000, guid: f746c650ed765624bb74cb2854c96167, type: 2}
 --- !u!114 &6076815246850774668
 MonoBehaviour:
+=======
+  offset: {x: -100, y: 0, z: 0}
+  DB: {fileID: 0}
+--- !u!65 &4251385468899841161
+BoxCollider:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2702848061355773211}
+<<<<<<< Updated upstream
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -269,3 +282,11 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+=======
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7666059, y: 2.7887063, z: 1.7666059}
+  m_Center: {x: 0, y: 0.3622411, z: 0}
+>>>>>>> Stashed changes
