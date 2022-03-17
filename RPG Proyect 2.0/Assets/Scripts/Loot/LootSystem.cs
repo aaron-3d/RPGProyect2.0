@@ -54,7 +54,7 @@ public class LootSystem : MonoBehaviour
                     {
                         GameObject go = Instantiate(localProb[i].reward, spawnPoint.position, Quaternion.identity);
 
-                        //go.GetComponent<ItemSuelto>().Inv = GameObject.FindObjectOfType<Jugador>().inventario.GetComponent<Inventario>(); //para que se ponga en el inventario del jugador
+                        //go.GetComponent<ItemSuelto>().Inv = GameObject.FindObjectOfType<MovimientoJugador>().inventario.GetComponent<Inventario>(); //para que se ponga en el inventario del jugador
 
                         if (cantidadDeItemsADropear == 1)
                         {

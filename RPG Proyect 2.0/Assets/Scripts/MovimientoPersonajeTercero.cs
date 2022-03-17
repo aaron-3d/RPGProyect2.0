@@ -57,6 +57,11 @@ public class MovimientoPersonajeTercero : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             canvasInventario.SetActive(!canvasInventario.activeInHierarchy);
+            Cursor.lockState = CursorLockMode.None;
+        }
+        if(canvasInventario.activeInHierarchy == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
         }
         /*if (!canvasInventario.activeInHierarchy && canvasInventario.GetComponent<Inventario>().objetoSeleccionado != null)
         {

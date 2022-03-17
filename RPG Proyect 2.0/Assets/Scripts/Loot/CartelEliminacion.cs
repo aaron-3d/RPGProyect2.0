@@ -9,7 +9,7 @@ public class CartelEliminacion : MonoBehaviour
     [SerializeField]
     Inventario Inv;
     public Slider slider;
-    public TextMeshPro cantidadText;
+    public Text cantidadText;
 
     private void Start()
     {

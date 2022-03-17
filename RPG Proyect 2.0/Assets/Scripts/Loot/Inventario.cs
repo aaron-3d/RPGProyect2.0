@@ -47,11 +47,12 @@ public class Inventario : MonoBehaviour
         pointerData = new PointerEventData(null);
         raycastResults = new List<RaycastResult>();
 
-        //Descripcion = GameObject.Find("Descripcion");
+        Descripcion = GameObject.Find("Descripcion");
 
         CE.gameObject.SetActive(false);
 
         canvas = transform.parent.transform;
+
     }
 
     // Update is called once per frame
@@ -252,7 +253,9 @@ public class Inventario : MonoBehaviour
         {
             for (int i = pool.Count; i < inventarioo.Count; i++)
             {
+                
                 Item it = Instantiate(item, contenido.GetChild(i)); // aqui el getchild lo utilizo para crear el item dentro del slot
+
                 pool.Add(it);
 
                 if (contenido.GetChild(0).childCount >= 2)
@@ -280,6 +283,8 @@ public class Inventario : MonoBehaviour
             }
         }
     }
+
+   
     void PocionSalud()
     {
         healthDamage.SumarVida(20);

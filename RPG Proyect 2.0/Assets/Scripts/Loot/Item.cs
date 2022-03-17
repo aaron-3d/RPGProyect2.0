@@ -14,8 +14,8 @@ public class Item : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
     public bool acumulable;
     public Button Boton;
     public GameObject _descripcion;
-    public TextMeshPro Nombre_;
-    public TextMeshPro Dato_;
+    public Text Nombre_;
+    public Text Dato_;
     public Vector3 offset;
     public DataBase DB;
     void Start()
@@ -23,8 +23,9 @@ public class Item : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
         acumulable = DB.baseDatos[ID].acumulable;
         Boton = GetComponent<Button>();
         _descripcion = Inventario.Descripcion;
-        Nombre_ = _descripcion.transform.GetChild(0).GetComponent<TextMeshPro>();
-        Dato_ = _descripcion.transform.GetChild(1).GetComponent<TextMeshPro>();
+        Nombre_ = _descripcion.transform.GetChild(0).GetComponent<Text>();
+        Dato_ = _descripcion.transform.GetChild(1).GetComponent<Text>();
+
         _descripcion.SetActive(false);
         if (!_descripcion.GetComponent<Image>().enabled) //en el caso de que el componente image no este activado, lo voy a activar.
         {
@@ -37,8 +38,8 @@ public class Item : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
     // Update is called once per frame
     void Update()
     {
-        //textoCantidad.text = cantidad.ToString();
-        if(transform.parent.GetComponent<Image>() != null)
+        
+        if(transform.parent != null && transform.parent.GetComponent<Image>() != null)
         {
             transform.parent.GetComponent<Image>().fillCenter = true;
         }
@@ -47,7 +48,7 @@ public class Item : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
 
         if(transform.parent == Inventario.canvas)
         {
-            _descripcion.SetActive(false);
+            //_descripcion.SetActive(false);
         }
         
     }

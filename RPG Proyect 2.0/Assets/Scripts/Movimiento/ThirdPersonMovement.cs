@@ -29,6 +29,8 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         //Cursor.visible = false;
 
         float horizontal = Input.GetAxisRaw("Horizontal");
