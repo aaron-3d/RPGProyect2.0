@@ -134,12 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bfc3496de391544da3c202ed03871e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 10
+  vidaEnemigo: 100
   anim: {fileID: 8416988445043472815}
   damageText: {fileID: 0}
   animacionTexto: {fileID: 0}
   deadEnemy: {fileID: 0}
-  enemySpawner: {fileID: 0}
 --- !u!195 &8416988445043472819
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1299,6 +1298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cantidad: 10
+  damageTextEnemyToPlayer: {fileID: 0}
+  animacionTextoTwo: {fileID: 0}
 --- !u!1 &5381352201454879450 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4728426434207774260, guid: 353e5ad269798e24fa232d11512726c0, type: 3}
